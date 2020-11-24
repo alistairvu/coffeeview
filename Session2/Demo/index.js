@@ -23,11 +23,13 @@ const Viet= new Person("Viet", 19, "Gay", "Ha Tay");
 Viet.speak();
 class Animal{
     species;
+    name;
     color;
     numberofLeg;
     gender;
-    constructor(species, color,numberofLeg,gender)
+    constructor(name, species, color,numberofLeg,gender)
     {
+        this.name= name;
         this.species=species;
         this.color=color;
         this.numberofLeg=numberofLeg;
@@ -53,7 +55,7 @@ class Animal{
         // }
     }
 }
-const snake= new Animal("Mamma snake", "Black", 0, "male");
+const snake= new Animal("Mamma snake","độc","Black", 0, "male");
 snake.eat();
 snake.speak();
 snake.isDangerous();
@@ -96,3 +98,16 @@ const myEmployee= new Employee("Binden", "77", "Ohio", "Male", 10000000);
 console.log(myEmployee);
 myEmployee.speak();
 myEmployee.showUp();
+ 
+class dog extends Animal{
+    constructor(name, species, color,numberofLeg,gender)
+    {
+        super(name, species, color,numberofLeg,gender);
+    }
+    speak()
+    {
+        console.log(this.name + " sủa go go go go go")
+    }
+}
+const bestFriends= new dog("AAA", "meat", "Brown", 4, "Female");
+bestFriends.speak();
