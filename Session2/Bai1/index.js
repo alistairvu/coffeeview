@@ -23,10 +23,20 @@ class Class {
         this.studentList = [];
     }
     addStudent(student) {
-        this.studentList.push(student);
+        if (student instanceof Student) {//kiểm tra có phải là một kiểu của lớp Student
+            this.studentList.push(student);
+        }
+        else {
+            alert("Moi Nhap Lai");
+        }
     }
-    findbyName(name) {
-        return this.studentList.filter(student => student.name === name);
+    findbyName(n) {
+        return this.studentList.filter(
+            function(a)
+            {
+                return (a.name.includes(n));
+            }
+        );
     }
     findbyAge(age) {
         return this.studentList.filter(student => student.age === age);
@@ -42,7 +52,7 @@ class Class {
 }
 
 const Hoang = new Student("Hoang", 15, "Vinh")
-const MAnh = new Student("Mai Anh ", 18, "Ha Noi");
+const MAnh = new Student("Khuat Quang Viet", 18, "Ha Noi");
 MAnh.showInfo();
 const PT05 = new Class();
 PT05.addStudent(Hoang);
