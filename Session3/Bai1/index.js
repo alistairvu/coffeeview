@@ -42,7 +42,7 @@ class Class {
 }
 
 const Hoang = new Student("Hoang", 15, "Vinh")
-const MAnh = new Student("Mai Anh ", 18, "Ha Noi");
+const MAnh = new Student("Mai Anh", 18, "Ha Noi");
 MAnh.showInfo();
 const PT05 = new Class();
 PT05.addStudent(Hoang);
