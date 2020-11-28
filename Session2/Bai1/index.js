@@ -1,55 +1,5 @@
-class Student {
-    name;
-    age;
-    placeofBirth;
-    constructor(name, age, placeofBirth) {
-        this.age = age;
-        this.name = name;
-        this.placeofBirth = placeofBirth;
-    }
-    showInfo() {
-        console.log(`
-        ---------------------------------------------
-        Name: ${this.name}
-        Age: ${this.age}
-        Place of birth: ${this.placeofBirth}
-        ---------------------------------------------
-        `)
-    }
-}
-class Class {
-    studentList;
-    constructor() {
-        this.studentList = [];
-    }
-    addStudent(student) {
-        if (student instanceof Student) {//kiểm tra có phải là một kiểu của lớp Student
-            this.studentList.push(student);
-        }
-        else {
-            alert("Moi Nhap Lai");
-        }
-    }
-    findbyName(n) {
-        return this.studentList.filter(
-            function(a)
-            {
-                return (a.name.includes(n));
-            }
-        );
-    }
-    findbyAge(age) {
-        return this.studentList.filter(student => student.age === age);
-    }
-    findbyAgeAndPlaceofBirth(age, placeofBirth) {
-        return this.studentList.filter(
-            function (a) {
-                if (a.age === age && a.placeofBirth === placeofBirth) return true;
-                else return false;
-            })
-    }
-
-}
+import {Student} from './module.js'
+import {Class} from './List.js'
 
 const Hoang = new Student("Hoang", 15, "Vinh")
 const MAnh = new Student("Khuat Quang Viet", 18, "Ha Noi");
