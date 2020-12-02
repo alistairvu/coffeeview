@@ -1,4 +1,3 @@
-import {getDataFromDoc, getDataFromDocs} from "./utills.js"
 import {Student} from "./student"
 export class School {
     StudentList;
