@@ -6,11 +6,11 @@ export function getDataFromDoc(doc)
 }
 export function getDataFromDocs(docs)
 {
-   const data= docs.docs;
-   const list= [];
-   console.log(data)
-   for(let i=0; i<data.length; i++)
-   list.push(getDataFromDoc(data[i]));
-   return list;
-   //return docs.docs.map(getDataFromDoc);
+//    const data= docs.docs;
+//    const list= [];
+//    console.log(data)
+//    for(let i=0; i<data.length; i++)
+//    list.push(getDataFromDoc(data[i]));
+//    return list;
+   return docs.docs.map(getDataFromDoc);
 }

@@ -1,6 +1,6 @@
 import {getDataFromDoc, getDataFromDocs} from "./utills.js"
 import {School} from "./school.js"
-import { Student } from "../Bai1/student.js";
+import { Student } from "./student.js";
 // read one lấy bản ghi về
 async function getoneDocument()
 {

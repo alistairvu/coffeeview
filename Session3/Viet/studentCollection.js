@@ -1,4 +1,5 @@
 import { Student } from './student.js'
+
 export class StudentCollection {
   listStudent;
   constructor() {
@@ -19,8 +20,6 @@ export class StudentCollection {
   getStudentByAgeAndAddress(age, address) {
     return this.listStudent.filter(item => item.age === age && item.address === address)
   }
-  getStudentByName(name) {
-    return this.listStudent.filter(item => item.fullName.includes(name))
-  }
+  
 }
 // export default CardStudent // không có mà export 

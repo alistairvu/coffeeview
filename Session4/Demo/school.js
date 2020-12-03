@@ -1,4 +1,4 @@
-import {Student} from "./student"
+import {Student} from "./student.js"
 export class School {
     StudentList;
     constructor()
