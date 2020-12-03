@@ -15,6 +15,7 @@ let eighTeenplus= studentCollection.getStudentByAgeAndAddress(18, "Hanoi")
 let container= document.getElementsByClassName("container");
 
 //đưa ra màn hình, nhác quá  nên ko làm hàm, chỉ lấy 1 cái làm ví dụ
+console.log(fifTeen.length)
 for(let i=0; i<fifTeen.length; i++)
 {
     console.log(fifTeen[i].getInfo());

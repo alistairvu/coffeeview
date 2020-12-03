@@ -1,34 +1,10 @@
-// import {School} from "./school"
-// let container= document.getElementsByClassName("container");
-// let fifTeen= new School();
-// fifTeen.setStudentList();
-// //đưa ra màn hình, nhác quá  nên ko làm hàm, chỉ lấy 1 cái làm ví dụ
-// for(let i=0; i<fifTeen.length; i++)
-// {
-    
-//     container[0].insertAdjacentHTML('beforeend', fifTeen[i].getInfo() );
-// }
-import {getDataFromDoc, getDataFromDocs} from "./utills.js"
-import {Student} from "./student.js"
-export class School {
-    StudentList;
-    constructor()
-    {
-        this.StudentList= []
-    }
-    async setStudentList()
-    {
-        let c= await firebase.firestore().collection("users").get();;
-        let list= getDataFromDocs(c);
-        console.log(list);
-        for(let i=0; i<list.length; i++)
-        {
-            this.StudentList.push(new Student(list[i].name, list[i].age, list[i].className, list[i].address))
-
-        }
-    }
-
-}
+import {School} from "./school.js"
+let container= document.getElementsByClassName("container");
 let fifTeen= new School();
-fifTeen.setStudentList();
-console.log(fifTeen);
+fifTeen.setStudentList().then(()=>{console.log(fifTeen.StudentList[1].getInfo());
+    for(let i=0; i<fifTeen.StudentList.length; i++)
+    {
+       console.log(fifTeen.StudentList[i].getInfo());
+       container[0].insertAdjacentHTML('beforeend', fifTeen.StudentList[i].getInfo() );
+    }
+    }); // methol setStudent mat thoi gian chay nen caafn phai co .then de goi ham ra sau khi thuc hien xong method day

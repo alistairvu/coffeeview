@@ -13,7 +13,7 @@ import './cardStudent.js'
     }
     getInfo()
     {
-        return  `<card-container classN= "${this.className}" name= "${this.name}" age=${this.age} address= "${this.placeofBirth}"> </card-container>`
+        return  `<card-container classN= "${this.className}" name= "${this.name}" age=${this.age} address= "${this.address}"> </card-container>`
     }
 
 }
