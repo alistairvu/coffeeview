@@ -8,3 +8,12 @@ fifTeen.setStudentList().then(()=>{console.log(fifTeen.StudentList[1].getInfo())
        container[0].insertAdjacentHTML('beforeend', fifTeen.StudentList[i].getInfo() );
     }
     }); // methol setStudent mat thoi gian chay nen caafn phai co .then de goi ham ra sau khi thuc hien xong method day
+function addDocument()
+{
+    const data = {
+        name: "Mai Anh",
+        age: 11
+    }
+    firebase.firestore().collection("users").add(data);
+}
+addDocument();
