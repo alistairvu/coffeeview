@@ -61,12 +61,6 @@ class RegisterScreen extends HTMLElement {
         else
         {
             alert("Mật khẩu không đúng");
-            const data ={
-                name : `${firstName+" "+ lastName}`,
-                email : `${email}`,
-                password : `${CryptoJS.MD5(password)}`
-            }
-            firebase.firestore().collection("user_student").add(data);
         }
     })
     }
