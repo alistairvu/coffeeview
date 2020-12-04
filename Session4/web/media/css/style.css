@@ -1,0 +1,27 @@
+
+
+/* slide */
+
+.mySlides {
+    display: none;
+}
+.mySlides img{
+    max-width: 100vw;
+}
+.slides-container {
+    position: relative;
+}
+
+.prev, .next {
+    position: absolute;
+    cursor: pointer;
+}
+
+.next{
+    top: 48%; 
+    right: 0px;
+}
+.prev{
+    top: 48%; 
+}
+   

@@ -12,11 +12,11 @@
     cursor: pointer;
     font-size: 40px;
 }
-.prev{
+.next{
     top: 48%;
     left: -40px;
 }
-.next{
-    right: -40px; 
+.prev{
+    right: 40px; 
     top: 48%;
 }
