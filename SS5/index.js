@@ -1,10 +1,12 @@
+
+
 import './screens/register.js'
 import './screens/login.js'
-import'./screens/story.js'
-import'./components/crearPost.js'
+import './screens/story.js'
+import './components/crearPost.js'
 import './components/Header.js'
 import './components/inputWrapper.js'
-import { getItemLocalStorage } from './utils.js'
+import { getItemLocalStorage } from "./utils.js";
 checkAuthen();
 async function checkAuthen() {
   const user = getItemLocalStorage('currentUser');

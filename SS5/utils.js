@@ -20,3 +20,19 @@ export function saveToLocalStorage(key, value) {
 export function getItemLocalStorage(key) {
   return JSON.parse(localStorage.getItem(key));
 }
+
+
+
+export function addDocumentPost(post)
+{
+  firebase.firestore().collection('posts').add(post);
+}
+export async function getDocumentPostbyUserId(userId)
+{
+  const res= await firebase.firestore()
+  .collection('posts')
+  .where('userId', '==', userId)
+  .get();
+  const post= getDataFromDocs(res.docs);
+  return post;
+}
