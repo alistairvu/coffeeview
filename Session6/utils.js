@@ -5,9 +5,8 @@ export function getDataFromDoc(doc) {
   return data
 }
 // lay du lieu tu get many document
-export function getDataFromDocs(docs)
-{
-   return docs.docs.map(getDataFromDoc);
+export function getDataFromDocs(docs) {
+  return docs.docs.map(getDataFromDoc);
 }
 /**
  * 
@@ -20,19 +19,19 @@ export function saveToLocalStorage(key, value) {
 export function getItemLocalStorage(key) {
   return JSON.parse(localStorage.getItem(key));
 }
+export function removeItemLocalStorage(key) {
+  localStorage.removeItem(key);
+}
 
 
-
-export function addDocumentPost(post)
-{
+export function addDocumentPost(post) {
   firebase.firestore().collection('posts').add(post);
 }
-export async function getDocumentPostbyUserId(userId)
-{
-  const res= await firebase.firestore()
-  .collection('posts')
-  .where('userId', '==', userId)
-  .get();
-  const post= getDataFromDocs(res.docs);
+export async function getDocumentPostbyUserId(userId) {
+  const res = await firebase.firestore()
+    .collection('posts')
+    .where('userId', '==', userId)
+    .get();
+  const post = getDataFromDocs(res.docs);
   return post;
 }
