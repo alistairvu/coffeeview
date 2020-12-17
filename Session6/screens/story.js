@@ -8,6 +8,7 @@ class Story extends HTMLElement{
         this._shadowRoot.innerHTML = `
         <story-header></story-header>
         <create-post></create-post>
+        <list-post></list-post>
         `
       }
       

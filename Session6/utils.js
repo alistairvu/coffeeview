@@ -35,3 +35,24 @@ export async function getDocumentPostbyUserId(userId) {
   const post = getDataFromDocs(res.docs);
   return post;
 }
+/**
+ * 
+ * @param {*} dateStr
+ * 14/12/2020 21:20 
+ */
+export function convertDate(dateStr)
+{
+  const d= new Date(dateStr);
+  const dd= validateNumber(d.getDate()) ;
+  const mm= validateNumber(d.getMonth() + 1);
+  const yy= d.getFullYear();
+  const hh= validateNumber(d.getHours());
+  const mn= validateNumber(d.getMinutes());
+  const s= `${dd}/${mm}/${yy}   ${hh}:${mn}`;
+  return s;
+}
+ 
+function validateNumber(number)
+{
+  return (number<10) ? ('0' + number) : (number)
+}
