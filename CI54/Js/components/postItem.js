@@ -24,14 +24,11 @@ class PostItem extends HTMLElement{
        this.author= this.getAttribute("author");
        this.time= this.getAttribute("time");
        this.content= this.getAttribute("content");
-       this.img= this.getAttribute("img");
-       const imgElm =this.img !== '' ? `<div class="image"><img src="${this.img}" style=" max-width: 60%;"/></div>` : ''
-       this._shadowRoot.innerHTML=`
+        this._shadowRoot.innerHTML=`
         <style>${style}</style>
         <div class="post-item">
         <div class="author-name">${this.author}</div>
         <div class="time">${convertDate(this.time)}</div>
-        ${imgElm}
         <div class="content">
            ${this.content}
         </div>

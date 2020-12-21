@@ -1,6 +1,6 @@
 
 import { getItemLocalStorage, uploadFileToStore } from "../utils.js";
-
+import { redirect } from "../index.js";
 const style = `
 #create-post textarea {
     width:  100%;

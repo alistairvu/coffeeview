@@ -1,4 +1,4 @@
-
+import {redirect} from '../index.js'
 import { removeItemLocalStorage } from '../utils.js'
 
 const style= `<style>
@@ -67,7 +67,7 @@ class StoryHeader extends HTMLElement{
     </div>
         `
          this._shadowRoot.getElementById("btn").addEventListener("click", (e) => {
-            router.navigate("login");
+             redirect("login");
              removeItemLocalStorage('currentUser', null);
          });
        

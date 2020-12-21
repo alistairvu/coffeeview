@@ -22,12 +22,8 @@ class ListPost extends HTMLElement {
         let html = ``;
 
         listPost.forEach(Element => {
-            const imgSrc =
-            (Element.file && Element.file.length > 0) 
-            ? Element.file[0] 
-            : null
             html += `
-            <post-item time="${Element.createdDate}" author="${Element.authorName}" content="${Element.content}" img="${imgSrc}"></post-item>
+            <post-item time="${Element.createdDate}" author="${Element.authorName}" content="${Element.content}"></post-item>
             `
         })
         console.log(listPost);
