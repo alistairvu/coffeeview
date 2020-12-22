@@ -9,6 +9,7 @@ const styles = `
   justify-content: center;
   margin: 0 auto;
   margin-top: 2vh;
+  margin-bottom: 2vh;
 }
 
 .img {
@@ -36,26 +37,31 @@ class ResultCard extends HTMLElement {
   }
 
   connectedCallback() {
+    const img = this.getAttribute("img")
+    const name = this.getAttribute("name")
+    const rating = this.getAttribute("rating")
+    const reviews = this.getAttribute("reviews")
+    const address = this.getAttribute("address")
+    const review = this.getAttribute("review")
+
     this._shadowRoot.innerHTML = `
     ${styles}
     <div class="container">
       <div class="img">
         <img
-          src="https://images.foody.vn/res/g69/688220/prof/s/foody-mobile-21463229_17672929133-461-636409132441098086.jpg"
-          alt="Image of Starbucks"
+          src="${img}"
+          alt="Image of ${name}"
         />
       </div>
       <div class="info">
-        <h3>Starbucks CharmVit</h3>
-        <div class="rating"><b>3.4</b> (192)</div>
+        <h3>${name}</h3>
+        <div class="rating"><b>${rating}</b> (${reviews})</div>
         <div class="address">
-          Charm Vit Tower A, 117 Trần Duy Hưng, Trung Hoà, Cầu Giấy, Hà Nội
-          100000, Vietnam
+          ${address}
         </div>
         <div class="review">
           <em
-            >"It's Starbucks as usual but in a lousy environment. Recommend for
-            take away only."
+            >"${review}"
           </em>
         </div>
       </div>

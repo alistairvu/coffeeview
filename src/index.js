@@ -1,3 +1,4 @@
 import "./components/resultCard.js"
+import "./components/resultList.js"
 
-document.getElementById("root").innerHTML = `<result-card></result-card>`
+document.getElementById("root").innerHTML = `<result-list></result-list>`
