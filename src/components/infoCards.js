@@ -1,41 +1,45 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-      }
+const styles = `
+<style>
+* {
+  margin: 0;
+  padding: 0;
+}
 
-      .container {
-        width: 60vw;
-        margin: 0 auto;
-        margin-top: 5vh;
-      }
+.container {
+  width: 60vw;
+  margin: 0 auto;
+  margin-top: 5vh;
+}
 
-      .cards {
-        margin-top: 5vh;
-        display: flex;
-        justify-content: space-between;
-      }
+.cards {
+  margin-top: 5vh;
+  display: flex;
+  justify-content: space-between;
+}
 
-      .card {
-        width: 25vw;
-        height: 25vh;
-        padding: 5px;
-        border: 1px solid black;
-      }
+.card {
+  width: 25vw;
+  height: 25vh;
+  padding: 5px;
+  border: 1px solid black;
+}
 
-      .card-section {
-        margin-top: 5px;
-        margin-bottom: 5px;
-      }
-    </style>
+.card-section {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+</style>
+`
+
+class InfoCards extends HTMLElement {
+  constructor() {
+    super()
+    this._shadowRoot = this.attachShadow({ mode: "open" })
+  }
+
+  connectedCallback() {
+    this._shadowRoot.innerHTML = `
+    ${styles}
     <div class="container">
       <div class="cards">
         <div class="rating-card card">
@@ -61,6 +65,8 @@
           </div>
         </div>
       </div>
-    </div>
-  </body>
-</html>
+    </div>`
+  }
+}
+
+window.customElements.define("info-cards", InfoCards)

@@ -1,7 +1,13 @@
 const styles = `
 <style>
+* {
+  margin: 0;
+  padding: 0;
+}
+
 .container {
   width: 60vw;
+  height: 20vh;
   border: 1px solid black;
   display: flex;
   flex-direction: row;
@@ -18,6 +24,7 @@ const styles = `
 
 img {
   width: 15vw;
+  max-height: 15vh; 
 }
 
 .info {
