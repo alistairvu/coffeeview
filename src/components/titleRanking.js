@@ -27,3 +27,6 @@ export class TitleRanking extends HTMLElement {
   }
 }
 window.customElements.define("title-ranking", TitleRanking)
+const style = `
+<style>
+</style>`
