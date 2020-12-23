@@ -1,3 +1,14 @@
+const styles = `
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.results {
+  display: flex;
+  flex-direction: row-reverse;
+}`
+
 class ResultScreen extends HTMLElement {
   constructor() {
     super()
@@ -7,7 +18,7 @@ class ResultScreen extends HTMLElement {
   connectedCallback() {
     this._shadowRoot.innerHTML = `
     <div class="results">
-      <result-list></result-list>
+      <filter-screen></filter-screen>
     </div>`
   }
 }

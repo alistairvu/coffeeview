@@ -37,22 +37,23 @@ img {
 }
 </style>`
 
+import { fromNumberToDollar } from "../utils.js"
+
 class ResultCard extends HTMLElement {
   constructor() {
     super()
     this._shadowRoot = this.attachShadow({ mode: "open" })
   }
 
-  connectedCallback() {
-    const img = this.getAttribute("img")
-    const key = this.getAttribute("key")
-    const name = this.getAttribute("name")
-    const rating = this.getAttribute("rating")
-    const reviews = this.getAttribute("reviews")
-    const address = this.getAttribute("address")
-    const review = this.getAttribute("review")
+  async connectedCallback() {
+    try {
+      const key = this.getAttribute("key")
+      const collection = firebase.firestore().collection("cafes")
+      const res = await collection.doc(key).get()
+      const data = await res.data()
+      const { img, name, rating, reviews, address, review, price } = data
 
-    this._shadowRoot.innerHTML = `
+      this._shadowRoot.innerHTML = `
     ${styles}
     <div class="container">
       <div class="img">
@@ -63,7 +64,9 @@ class ResultCard extends HTMLElement {
       </div>
       <div class="info">
         <h3><a href="#!/cafe/${key}">${name}</a></h3>
-        <div class="rating"><b>${rating}</b> (${reviews})</div>
+        <div class="rating"><b>${rating}</b> (${reviews}) · ${fromNumberToDollar(
+        price
+      )}</div> 
         <div class="address">
           ${address}
         </div>
@@ -74,6 +77,9 @@ class ResultCard extends HTMLElement {
         </div>
       </div>
     </div>`
+    } catch (e) {
+      console.error(e)
+    }
   }
 }
 
