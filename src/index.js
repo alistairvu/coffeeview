@@ -1,9 +1,6 @@
+import "./navigo.js"
 import "./components/resultCard.js"
 import "./components/resultList.js"
 import "./components/infoCards.js"
-
-document.getElementById("root").innerHTML = `
-<div>
-  <result-list></result-list>
-  <info-cards></info-cards>
-</div>`
+import "./screens/resultScreen.js"
+import "./screens/cafeScreen.js"

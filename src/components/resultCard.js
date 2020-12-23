@@ -45,6 +45,7 @@ class ResultCard extends HTMLElement {
 
   connectedCallback() {
     const img = this.getAttribute("img")
+    const key = this.getAttribute("key")
     const name = this.getAttribute("name")
     const rating = this.getAttribute("rating")
     const reviews = this.getAttribute("reviews")
@@ -61,7 +62,7 @@ class ResultCard extends HTMLElement {
         />
       </div>
       <div class="info">
-        <h3>${name}</h3>
+        <h3><a href="#!/cafe/${key}">${name}</a></h3>
         <div class="rating"><b>${rating}</b> (${reviews})</div>
         <div class="address">
           ${address}

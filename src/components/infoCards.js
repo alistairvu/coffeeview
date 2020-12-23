@@ -37,31 +37,42 @@ class InfoCards extends HTMLElement {
     this._shadowRoot = this.attachShadow({ mode: "open" })
   }
 
-  connectedCallback() {
+  async connectedCallback() {
+    this._shadowRoot.innerHTML = `
+    <div class="container">
+      <em>Loading...</em>
+    </div>`
+
+    const key = this.getAttribute("key")
+    const collection = firebase.firestore().collection("cafes")
+    const res = await collection.doc(key).get()
+    const data = await res.data()
+    const { rating, reviews, address, phone, hours } = data
+
     this._shadowRoot.innerHTML = `
     ${styles}
     <div class="container">
       <div class="cards">
         <div class="rating-card card">
           <h2>Ratings and reviews</h2>
-          <h3>3.4 / 5.0</h3>
-          <p><em>192 reviews</em></p>
+          <h3>${rating} / 5.0</h3>
+          <p><em>${reviews} ${reviews == 1 ? "review" : "reviews"}</em></p>
         </div>
         <div class="details-card card">
           <h2>Details</h2>
           <div class="address-card card-section">
             <b>ADDRESS</b>
             <p>
-              Charm Vit Tower A, 117 Trần Duy Hưng, Trung Hoà, Cầu Giấy, Hà Nội
+              ${address}
             </p>
           </div>
           <div class="phone-card card-section">
             <b>PHONE NUMBER</b>
-            <p>+84 24 3968 2929</p>
+            <p>${phone}</p>
           </div>
           <div class="hours-card card-section">
             <b>HOURS</b>
-            <p>6:30 am – 6:00 pm</p>
+            <p>${hours}</p>
           </div>
         </div>
       </div>
