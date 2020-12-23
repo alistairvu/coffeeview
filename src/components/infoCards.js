@@ -1,34 +1,60 @@
 const styles = `
 <style>
-* {
-  margin: 0;
-  padding: 0;
-}
+      * {
+        margin: 0;
+        padding: 0;
+      }
 
-.container {
-  width: 60vw;
-  margin: 0 auto;
-  margin-top: 5vh;
-}
+      .container {
+        width: 60vw;
+        margin: 0 auto;
+        margin-top: 5vh;
+      }
 
-.cards {
-  margin-top: 5vh;
-  display: flex;
-  justify-content: space-between;
-}
+      @media (max-width: 729px) {
+        .container {
+          width: 100vw;
+        }
+      }
 
-.card {
-  width: 25vw;
-  height: 25vh;
-  padding: 5px;
-  border: 1px solid black;
-}
+      .cards {
+        margin-top: 5vh;
+        display: flex;
+        justify-content: space-between;
+      }
 
-.card-section {
-  margin-top: 5px;
-  margin-bottom: 5px;
-}
-</style>
+      @media (max-width: 480px) {
+        .cards {
+          flex-direction: column;
+        }
+      }
+
+      .card {
+        width: 25vw;
+        height: 200px;
+        padding: 5px;
+        border: 1px solid black;
+      }
+
+      @media (max-width: 729px) {
+        .card {
+          width: 45vw;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .card {
+          width: 100vw;
+          margin-top: 10px;
+          margin-bottom: 10px;
+        }
+      }
+
+      .card-section {
+        margin-top: 5px;
+        margin-bottom: 5px;
+      }
+    </style>
 `
 
 class InfoCards extends HTMLElement {

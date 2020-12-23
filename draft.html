@@ -18,17 +18,43 @@
         margin-top: 5vh;
       }
 
+      @media (max-width: 729px) {
+        .container {
+          width: 100vw;
+        }
+      }
+
       .cards {
         margin-top: 5vh;
         display: flex;
         justify-content: space-between;
       }
 
+      @media (max-width: 480px) {
+        .cards {
+          flex-direction: column;
+        }
+      }
+
       .card {
         width: 25vw;
-        height: 25vh;
+        height: 200px;
         padding: 5px;
         border: 1px solid black;
+      }
+
+      @media (max-width: 729px) {
+        .card {
+          width: 45vw;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .card {
+          width: 100vw;
+          margin-top: 10px;
+          margin-bottom: 10px;
+        }
       }
 
       .card-section {

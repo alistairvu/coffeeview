@@ -7,7 +7,7 @@ const styles = `
 
 .container {
   width: 60vw;
-  height: 20vh;
+  height: 150px;
   border: 1px solid black;
   display: flex;
   flex-direction: row;
