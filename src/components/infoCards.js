@@ -65,17 +65,19 @@ class InfoCards extends HTMLElement {
 
   async connectedCallback() {
     this._shadowRoot.innerHTML = `
+    ${styles}
     <div class="container">
-      <em>Loading...</em>
+      <em>Loading info...</em>
     </div>`
 
-    const key = this.getAttribute("key")
-    const collection = firebase.firestore().collection("cafes")
-    const res = await collection.doc(key).get()
-    const data = await res.data()
-    const { rating, reviews, address, phone, hours } = data
+    try {
+      const key = this.getAttribute("key")
+      const collection = firebase.firestore().collection("cafes")
+      const res = await collection.doc(key).get()
+      const data = await res.data()
+      const { rating, reviews, address, phone, hours } = data
 
-    this._shadowRoot.innerHTML = `
+      this._shadowRoot.innerHTML = `
     ${styles}
     <div class="container">
       <div class="cards">
@@ -103,6 +105,13 @@ class InfoCards extends HTMLElement {
         </div>
       </div>
     </div>`
+    } catch (e) {
+      this._shadowRoot.innerHTML = `
+      ${styles}
+      <div class="container">
+        <h1>404 Not Found</h1>
+      </div>`
+    }
   }
 }
 
