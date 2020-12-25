@@ -1,7 +1,7 @@
 const styles = `
 <style>
 .container {
-  width: 70%;
+  
 }
 </style>`
 

@@ -1,8 +1,16 @@
 const style = `
     <style>
     #filter-card{
-        width:30%
-       
+   
+    }
+    .container{
+      display:grid;
+      margin-left:10vw;
+      margin-right:10vw;
+      grid-template-columns: 1fr 4fr;
+    }
+    #result-list{
+
     }
     </style>
 `
@@ -21,6 +29,7 @@ class Filter extends HTMLElement {
                 <div><input type="checkbox" name="district" value="Cầu Giấy" id="Cầu Giấy"><label for="Cầu Giấy">Cầu Giấy</label></div>
                 <div><input type="checkbox" name="district" value="Hoàn Kiếm" id="Hoàn Kiếm"><label for="Hoàn Kiếm">Hoàn Kiếm</label></div>
                 <div><input type="checkbox" name="district" value="Đống Đa" id="Đống Đa"><label for="Đống Đa">Đống Đa</label></div>
+                <div><input type="checkbox" name="district" value="Hai Bà Trưng" id="Hai Bà Trưng"><label for="Hai Bà Trưng">Hai Bà Trưng</label></div>
             </div>
             <div>
                 <h3>Mức giá</h3>
