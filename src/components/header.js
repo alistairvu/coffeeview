@@ -1,5 +1,4 @@
-
-const style =`
+const style = `
 *{
     margin: 0;
     padding: 0;
@@ -37,14 +36,13 @@ const style =`
 `
 // import {redirect} from '../index.js'
 class StoryHeader extends HTMLElement {
-    constructor() {
-        super()
-        this._shadowDom = this.attachShadow({mode: 'open'})
-    }
+  constructor() {
+    super()
+    this._shadowDom = this.attachShadow({ mode: "open" })
+  }
 
-    connectedCallback() {
-        
-        this._shadowDom.innerHTML = `
+  connectedCallback() {
+    this._shadowDom.innerHTML = `
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <style>
             ${style}
@@ -52,22 +50,21 @@ class StoryHeader extends HTMLElement {
         <div class="container">
             <div class="logo">
                 <img src="./img/endpoint.png" alt="">
-                <div class="branch">SHARE STORY</div>
+                <div class="branch"><a href="#!/">SHARE STORY</a></div>
             </div>
             <div class="user-infor">
                 <div class="avatar"><i class="fa fa-user-circle-o" style="color: #fff;font-size:24px"></i></div>
-                <button class="btnLogOut" id='btnLogOut'><i class="fa fa-sign-out" style="font-size:24px;"></i></button>
+                <a href="#!/login"><button class="btnLogOut" id='btnLogOut'><i class="fa fa-sign-out" style="font-size:24px;"></i></button></a>
             </div>
         </div>
         `
-        this._shadowDom.querySelector('.btnLogOut')
-        .addEventListener('click', () =>{
-            localStorage.removeItem('currentUser')
-            // redirect('login')
-            router.navigate('login');
-        })
-
-    }
-
+    this._shadowDom
+      .querySelector(".btnLogOut")
+      .addEventListener("click", () => {
+        localStorage.removeItem("currentUser")
+        // redirect('login')
+        router.navigate("login")
+      })
+  }
 }
-window.customElements.define('header-cafe',StoryHeader)
+window.customElements.define("header-cafe", StoryHeader)

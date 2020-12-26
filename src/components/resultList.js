@@ -1,11 +1,7 @@
 const styles = `
 <style>
-.container {
-  
-}
 .container{
-
-  padding:2px;
+  padding: 2px;
 }
 
 </style>`

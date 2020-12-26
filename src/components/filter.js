@@ -11,7 +11,7 @@ const style = `
       margin-left:15vw;
       margin-right:15vw;
       grid-template-columns: 2fr 3fr;
-     
+     padding-top:2vh;
       color:black;
     }
     #result-list{
@@ -100,17 +100,17 @@ class Filter extends HTMLElement {
     let idList = []
     for (let k of result.keys()) {
       let cafe = result[k]
-      
+
       for (let key in checkboxValues) {
-     console.log(cafe[key])
+        console.log(cafe[key])
         if (key !== "feature" && checkboxValues[key].includes(cafe[key])) {
           cafe.check = true
         } else if (
           key == "feature" &&
           checkboxValues[key].every(function (val) {
-           console.log(cafe[key])
-           console.log(key)
-           console.log(cafe)
+            console.log(cafe[key])
+            console.log(key)
+            console.log(cafe)
             return cafe[key].includes(val)
           })
         ) {

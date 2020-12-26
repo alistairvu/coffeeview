@@ -16,6 +16,9 @@ router
     "/cafe/:key": function ({ key }) {
       rootElement.innerHTML = `<cafe-screen key="${key}"></cafe-screen>`
     },
+    "/login": function () {
+      rootElement.innerHTML = `<login-screen></login-screen>`
+    },
   })
   .resolve()
 
