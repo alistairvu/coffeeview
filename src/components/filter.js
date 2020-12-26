@@ -1,7 +1,20 @@
 const style = `
     <style>
+    @media (max-width: 729px) {
+      #filter-card {
+       padding:0;
+       margin:0;
+
+      }
+       .container {
+       padding:0;
+       margin:0;
+       width:100vw;
+      }
+    }
     #filter-card{
      margin:2vw;
+     height:750px;
       
      padding:3vw;
      background-color:#f5f5f5;

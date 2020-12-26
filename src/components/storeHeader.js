@@ -8,12 +8,24 @@ const styles = `
       .container {
         width: 60vw;
         margin:  auto;
-       
+        
 
       }
       h1{
         text-transform:uppercase;
-        font-size:300%
+        font-size:300%;
+        color:white;
+        background-color:black;
+        text-align:center
+       
+      }
+      @media (max-width: 729px) {
+        
+         .container {
+         padding:5vw;
+         margin:5vw;
+         width:90vw;
+        }
        
       }
       
