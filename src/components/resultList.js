@@ -21,8 +21,16 @@ class ResultList extends HTMLElement {
     if (idListString.length == 0) {
       const res = await collection.get()
       const docs = await res.docs
-      const data = docs.map((doc) => doc.id)
-      const display = getResultListFromArr(data)
+      const data = docs.map((doc) => ({
+        id: doc.id,
+        rating: doc.data().rating,
+      }))
+      const dataId = data
+        .sort((a, b) =>
+          a.rating === b.rating ? b.reviews - a.reviews : b.rating - a.rating
+        )
+        .map((doc) => doc.id)
+      const display = getResultListFromArr(dataId)
 
       this._shadowRoot.innerHTML = `
     ${styles}
