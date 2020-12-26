@@ -45,14 +45,36 @@ class WriteComment extends HTMLElement {
     ${styles}
     <div class="container">
       <form id="review-form">
-        <input class="title" name="title" type="text" placeholder="Title"></input>
-        <textarea rows="6" name="content" class="input" placeholder="Type your review..."></textarea>
-        <div id="rating">
-          <p>Rating: <input type="number" min="1" max="5" name="rating"></input></p>
+        <input class="title" name="title" type="text" placeholder="Title" id="title"></input>
+        <textarea rows="6" name="content" id="content" class="input" placeholder="Type your review..."></textarea>
+        <div class="rating">
+          <p>Rating: <input type="number" min="1" max="5" name="rating" id="rating"></input></p>
         </div>
         <button type="submit">Submit</button>
       </form>
     </div>`
+
+    const key = this.getAttribute("key")
+
+    this._shadowRoot
+      .getElementById("review-form")
+      .addEventListener("submit", async (e) => {
+        e.preventDefault()
+        const newComment = {
+          author: "test",
+          title: this._shadowRoot.getElementById("title").value,
+          content: this._shadowRoot.getElementById("content").value,
+          rating: this._shadowRoot.getElementById("rating").value + ".0",
+        }
+        const collection = await firebase
+          .firestore()
+          .collection("cafes")
+          .doc(key)
+          .collection("comments")
+        collection.add(newComment)
+        alert("Your comment has been uploaded!")
+        setTimeout(() => location.reload(), 500)
+      })
   }
 }
 
