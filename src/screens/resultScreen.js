@@ -7,7 +7,9 @@ const styles = `
 .results {
   display: flex;
   flex-direction: row-reverse;
-}`
+}
+
+`
 
 class ResultScreen extends HTMLElement {
   constructor() {

@@ -6,20 +6,27 @@ const styles = `
 }
 
 .container {
-  width: 60vw;
+  width: 45vw;
   height: 150px;
-  border: 1px solid black;
+  border: 1px solid #9d9d9d;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   margin: 0 auto;
-  margin-top: 2vh;
-  margin-bottom: 2vh;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+
+  padding:4px;
+
+}
+.container::hover{
+
 }
 
 .img {
   flex: 1;
+  padding:5px;
 }
 
 img {
@@ -35,7 +42,19 @@ img {
 .review {
   margin-top: 2vh;
 }
-</style>`
+a{
+  color:black;
+  text-transform:uppercase;
+  text-decoration: none;
+  
+}
+a:hover {
+  color: #3c3a3b;
+ 
+}
+
+</style>
+`
 
 import { fromNumberToDollar } from "../utils.js"
 
@@ -63,7 +82,7 @@ class ResultCard extends HTMLElement {
         />
       </div>
       <div class="info">
-        <h3><a href="#!/cafe/${key}">${name}</a></h3>
+        <h2><a href="#!/cafe/${key}">${name}</a></h2>
         <div class="rating"><b>${rating}</b> (${reviews}) · ${fromNumberToDollar(
         price
       )}</div> 
@@ -76,7 +95,9 @@ class ResultCard extends HTMLElement {
           </em>
         </div>
       </div>
-    </div>`
+      
+    </div>
+    `
     } catch (e) {
       console.error(e)
     }

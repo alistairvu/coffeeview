@@ -3,6 +3,11 @@ const styles = `
 .container {
   
 }
+.container{
+
+  padding:2px;
+}
+
 </style>`
 
 import { getResultListFromArr } from "../utils.js"
