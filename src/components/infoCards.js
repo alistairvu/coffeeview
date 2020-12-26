@@ -97,8 +97,13 @@ class InfoCards extends HTMLElement {
       <div class="cards">
         <div class="rating-card card">
           <h2>Ratings and reviews</h2>
-          <h1>${rating.toFixed(1)}/5.0</h1>
-          <p><em>${reviews} ${reviews == 1 ? "review" : "reviews"}</em></p>
+          ${
+            reviews <= 0
+              ? `<b>No reviews yet.</b>
+            <p><em>Be the first to add a review!</em></p>`
+              : `<h1>${rating.toFixed(1)}/5.0</h1>
+          <p><em>${reviews} ${reviews == 1 ? "review" : "reviews"}</em></p>`
+          }
         </div>
         <div class="details-card card">
           <h2>Details</h2>

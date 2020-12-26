@@ -74,6 +74,32 @@ class WriteComment extends HTMLElement {
           time: new Date().toISOString(),
           isShown: true,
         }
+
+        await firebase
+          .firestore()
+          .collection("cafes")
+          .doc(key)
+          .update({
+            reviews: firebase.firestore.FieldValue.increment(1),
+            totalRating: firebase.firestore.FieldValue.increment(
+              parseInt(this._shadowRoot.getElementById("rating").value)
+            ),
+          })
+          .then(async () => {
+            const doc = await firebase.firestore().collection("cafes").doc(key)
+            const res = await doc.get()
+            const data = await res.data()
+            const newReviews = data.reviews
+            const newTotal = data.totalRating
+            if (newReviews === 0) {
+              doc.update({ rating: 0 })
+            } else {
+              doc.update({
+                rating: newTotal / newReviews,
+              })
+            }
+          })
+
         const collection = await firebase
           .firestore()
           .collection("cafes")

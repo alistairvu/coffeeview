@@ -76,7 +76,16 @@ class ResultCard extends HTMLElement {
       const collection = firebase.firestore().collection("cafes")
       const res = await collection.doc(key).get()
       const data = await res.data()
-      const { img, name, rating, reviews, address, review, price } = data
+      const {
+        img,
+        name,
+        rating,
+        reviews,
+        address,
+        review,
+        price,
+        totalRating,
+      } = data
 
       this._shadowRoot.innerHTML = `
     ${styles}
@@ -89,9 +98,11 @@ class ResultCard extends HTMLElement {
       </div>
       <div class="info">
         <h2>${name}</h2>
-        <div class="rating"><b>${rating.toFixed(1)}/5.0</b> (${reviews}) · ${fromNumberToDollar(
-        price
-      )}</div> 
+        <div class="rating">${
+          reviews > 0
+            ? `<b>${rating.toFixed(1)}/5.0</b> (${reviews})`
+            : `<span>No reviews yet</span>`
+        } · ${fromNumberToDollar(price)}</div> 
         <div class="address">
           ${address}
         </div>

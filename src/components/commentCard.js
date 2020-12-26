@@ -43,10 +43,13 @@ class Comment extends HTMLElement {
         ${content}
       </p>
       ${
-        JSON.parse(localStorage.getItem("user")).username === author
-          ? `<p class="delete" id="delete">Delete</p>`
+        localStorage.getItem("user")
+          ? JSON.parse(localStorage.getItem("user")).username === author
+            ? `<p class="delete" id="delete">Delete</p>`
+            : ""
           : ""
       }
+      
     </div>`
 
     this._shadowRoot
@@ -55,6 +58,28 @@ class Comment extends HTMLElement {
         const confirmDelete = confirm("Do you want to delete this comment?")
 
         if (confirmDelete) {
+          await firebase
+            .firestore()
+            .collection("cafes")
+            .doc(store)
+            .update({
+              reviews: firebase.firestore.FieldValue.increment(-1),
+              totalRating: firebase.firestore.FieldValue.increment(-1 * rating),
+            })
+            .then(async () => {
+              const doc = await firebase
+                .firestore()
+                .collection("cafes")
+                .doc(store)
+              const res = await doc.get()
+              const data = await res.data()
+              const newReviews = data.reviews
+              const newTotal = data.totalRating
+              doc.update({
+                rating: newTotal / newReviews,
+              })
+            })
+
           await data
             .collection("comments")
             .doc(key)
