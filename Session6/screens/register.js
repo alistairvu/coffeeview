@@ -24,6 +24,11 @@ const style = `
     padding: 10px 15px;
     border-radius: 5px;
   }
+  @media only screen and (max-width: 768px){
+    #register-form{
+      width: 100%;
+    }
+  }
 `
 
 class RegisterSceen extends HTMLElement{

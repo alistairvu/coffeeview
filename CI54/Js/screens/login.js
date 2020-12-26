@@ -25,7 +25,7 @@ const style = `
     border-radius: 5px;
   }
 `
-import { redirect } from '../index.js'
+
 import { getDataFromDocs, saveToLocalStorage } from '../utils.js'
 class loginSceen extends HTMLElement{
   constructor() {
