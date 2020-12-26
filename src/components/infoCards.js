@@ -14,7 +14,7 @@ const styles = `
 
       }
       h1{
-        font-size:500%;
+        font-size:400%;
       }
       .rating-card{
         
@@ -97,7 +97,7 @@ class InfoCards extends HTMLElement {
       <div class="cards">
         <div class="rating-card card">
           <h2>Ratings and reviews</h2>
-          <h1>${rating}/5.0</h1>
+          <h1>${rating.toFixed(1)}/5.0</h1>
           <p><em>${reviews} ${reviews == 1 ? "review" : "reviews"}</em></p>
         </div>
         <div class="details-card card">

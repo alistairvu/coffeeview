@@ -89,7 +89,7 @@ class ResultCard extends HTMLElement {
       </div>
       <div class="info">
         <h2>${name}</h2>
-        <div class="rating"><b>${rating}/5.0</b> (${reviews}) · ${fromNumberToDollar(
+        <div class="rating"><b>${rating.toFixed(1)}/5.0</b> (${reviews}) · ${fromNumberToDollar(
         price
       )}</div> 
         <div class="address">
