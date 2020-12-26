@@ -16,12 +16,12 @@ const styles = `
   margin: 0 auto;
   margin-top: 5vh;
   margin-bottom: 5vh;
-
-  padding:4px;
+  background-color:#f3f3f3;
+  padding:10px;
 
 }
-.container::hover{
-
+.container:hover{
+  background-color:white;
 }
 
 .img {
@@ -42,11 +42,15 @@ img {
 .review {
   margin-top: 2vh;
 }
-a{
+h2{
   color:black;
   text-transform:uppercase;
   text-decoration: none;
   
+}
+a{
+  text-decoration: none;
+  color:black;
 }
 a:hover {
   color: #3c3a3b;
@@ -74,7 +78,7 @@ class ResultCard extends HTMLElement {
 
       this._shadowRoot.innerHTML = `
     ${styles}
-    <div class="container">
+    <a href="#!/cafe/${key}"><div class="container">
       <div class="img">
         <img
           src="${img}"
@@ -82,7 +86,7 @@ class ResultCard extends HTMLElement {
         />
       </div>
       <div class="info">
-        <h2><a href="#!/cafe/${key}">${name}</a></h2>
+        <h2>${name}</h2>
         <div class="rating"><b>${rating}</b> (${reviews}) · ${fromNumberToDollar(
         price
       )}</div> 
@@ -96,7 +100,7 @@ class ResultCard extends HTMLElement {
         </div>
       </div>
       
-    </div>
+    </div></a>
     `
     } catch (e) {
       console.error(e)
