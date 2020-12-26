@@ -64,12 +64,18 @@ class InfoCards extends HTMLElement {
   }
 
   async connectedCallback() {
+    this._shadowRoot.innerHTML = `
+    ${styles}
+    <div class="container">
+      <em>Loading info...</em>
+    </div>`
+
     try {
       const key = this.getAttribute("key")
       const collection = firebase.firestore().collection("cafes")
       const res = await collection.doc(key).get()
       const data = await res.data()
-      const { rating, reviews, address, phone, hours, feature, style } = data
+      const { rating, reviews, address, phone, hours } = data
 
       this._shadowRoot.innerHTML = `
     ${styles}
@@ -79,17 +85,6 @@ class InfoCards extends HTMLElement {
           <h2>Ratings and reviews</h2>
           <h3>${rating} / 5.0</h3>
           <p><em>${reviews} ${reviews == 1 ? "review" : "reviews"}</em></p>
-          <div class="features">
-            <b>FEATURES</b> <br/>
-            ${feature.join(", ") + "."}
-          </div>
-          <div class="style">
-            <b>STYLE</b> <br />
-            ${
-              style.substring(0, 1).toUpperCase() +
-              style.substring(1).toLowerCase()
-            }
-          </div>
         </div>
         <div class="details-card card">
           <h2>Details</h2>

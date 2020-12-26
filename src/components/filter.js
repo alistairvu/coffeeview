@@ -4,7 +4,7 @@ const style = `
      margin:2vw;
       
      padding:3vw;
-     background-color:#f3f3f3;
+     background-color:#f5f5f5;
     }
     .container{
       display:grid;
@@ -13,6 +13,7 @@ const style = `
       grid-template-columns: 2fr 3fr;
      padding-top:2vh;
       color:black;
+      background-color:white;
     }
     #result-list{
 
@@ -28,8 +29,6 @@ const style = `
       margin-left:10px;
     }
     input:checked {
-    background-color:black;
-    color:white
     
     }
     </style>

@@ -8,7 +8,7 @@ const styles = `
 .container {
   width: 45vw;
   height: 150px;
-  border: 1px solid #9d9d9d;
+ 
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -16,12 +16,14 @@ const styles = `
   margin: 0 auto;
   margin-top: 5vh;
   margin-bottom: 5vh;
-  background-color:#f3f3f3;
-  padding:10px;
+  background-color:#f5f5f5;
+  padding-bottom:20px;
+  padding-top:20px;
+  padding-left:20px;
 
 }
 .container:hover{
-  background-color:white;
+  background-color:#ebebeb;
 }
 
 .img {
