@@ -30,8 +30,8 @@ const styles = `
 }
 
 img {
-  width: 15vw;
-  max-height: 15vh; 
+  width: 200px;
+  max-height: 150px; 
 }
 
 .info {
