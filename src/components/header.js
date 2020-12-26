@@ -12,7 +12,7 @@ const style = `
 }
 
 .container{
-    background-color:#3c3a3b;
+    background-color:black;
     display: flex;
     justify-content: space-between;
     align-items: center;
