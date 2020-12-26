@@ -1,4 +1,3 @@
-
 class CafeScreen extends HTMLElement {
   constructor() {
     super()
@@ -10,6 +9,7 @@ class CafeScreen extends HTMLElement {
 
     this._shadowRoot.innerHTML = `
     <style>
+    
     * {
       margin: 0;
       padding: 0;

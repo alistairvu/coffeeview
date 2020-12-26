@@ -8,7 +8,14 @@ const styles = `
   display: flex;
   flex-direction: row-reverse;
 }
+@media (max-width: 729px) {
+  .container {
+   padding:0;
+   margin:0;
 
+  }
+  
+}
 `
 
 class ResultScreen extends HTMLElement {

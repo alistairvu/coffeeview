@@ -8,13 +8,30 @@ const styles = `
       .container {
         width: 60vw;
         margin:  auto;
-       
+        
 
       }
       h1{
         text-transform:uppercase;
-        font-size:300%
+        font-size:300%;
+        color:white;
+        background-color: #3c3a3b;
+        text-align:center
        
+      }
+      @media (max-width: 729px) {
+        
+         .container {
+         padding:5vw;
+         margin:5vw;
+         width:90vw;
+        }
+       
+      }
+      
+      .back-arrow {
+        color: black;
+        text-decoration: none;
       }
 </style>`
 
@@ -43,7 +60,9 @@ class Header extends HTMLElement {
     this._shadowRoot.innerHTML = `
     ${styles}
     <div class="container">
-      <br>
+      <a href="#!/cafe" class="back-arrow">
+        <h3>← Return to results</h3>
+      </a>
       <br>
       <h1>${name}</h1>
       <div class="data">

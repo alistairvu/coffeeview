@@ -1,3 +1,4 @@
+
 const style = `
 *{
     margin: 0;
@@ -58,6 +59,7 @@ class StoryHeader extends HTMLElement {
         <div class="container">
             <div class="logo">
               <a href="#!/"><div class="branch">coffeeview</div></a>
+            
             </div>
             ${
               window.localStorage.getItem("isLoggedIn") === "true"

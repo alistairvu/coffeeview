@@ -9,11 +9,12 @@ const styles = `
         width: 60vw;
         margin: 10px auto;
         border: solid black 1px;
-        padding: 5px;
+        padding: 1vw;
+        display:border-box
       }
 
       .input {
-        width: 100%;
+        width: 90%;
         resize: none;
       }
 
@@ -38,6 +39,17 @@ const styles = `
       input[type=number] {
         -moz-appearance: textfield;
       }
+      textarea,button,input{
+        font-family:Oswald;
+        padding:5px;
+      }
+      p,button,h3{
+        text-align:center;
+        color:white
+      }
+      .container{
+        background-color:black
+      }
     </style>`
 
 class WriteComment extends HTMLElement {
@@ -51,6 +63,7 @@ class WriteComment extends HTMLElement {
     ${styles}
     <div class="container">
       <form id="review-form">
+        <h3>Write a Review!</h3>
         <input class="title" name="title" type="text" placeholder="Title" id="title"></input>
         <textarea rows="6" name="content" id="content" class="input" placeholder="Type your review..."></textarea>
         <div class="rating">

@@ -29,7 +29,17 @@ const styles = `
       @media (max-width: 729px) {
         .container {
           width: 100vw;
+          margin:5vw;
         }
+        .rating-card{
+        
+         padding:0
+         }
+         .details-card{
+           
+          padding:0
+          
+         }
       }
 
       .cards {
@@ -89,8 +99,14 @@ class InfoCards extends HTMLElement {
       const collection = firebase.firestore().collection("cafes")
       const res = await collection.doc(key).get()
       const data = await res.data()
-      const { rating, reviews, address, phone, hours } = data
-
+      const { rating, reviews, address, phone, hours, feature } = data
+      let features=''
+      for(let feat of feature){
+        if(!features){
+          features+=feat
+        }
+        else{features+=`, ${feat}`}
+      }
       this._shadowRoot.innerHTML = `
     ${styles}
     <div class="container">
@@ -120,6 +136,10 @@ class InfoCards extends HTMLElement {
           <div class="hours-card card-section">
             <b>HOURS</b>
             <p>${hours}</p>
+          </div>
+          <div class="feature-card card-section">
+            <b>FEATURES</b>
+            <p>${features}</p>
           </div>
         </div>
       </div>

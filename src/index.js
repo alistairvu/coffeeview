@@ -3,7 +3,7 @@ import "./navigo.js"
 import "./components/header.js"
 import "./components/filter.js"
 import "./components/resultCard.js"
-import "./components/postComment.js"
+
 import "./components/resultList.js"
 import "./components/storeHeader.js"
 import "./components/infoCards.js"
