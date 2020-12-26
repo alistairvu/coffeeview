@@ -1,12 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <style>
+const styles = `
+<style>
       * {
         margin: 0;
         padding: 0;
@@ -18,7 +11,17 @@
         margin: 10px auto;
         padding: 5px;
       }
-    </style>
+    </style>`
+
+class Comment extends HTMLElement {
+  constructor() {
+    super()
+    this._shadowRoot = this.attachShadow({ mode: "open" })
+  }
+
+  connectedCallback() {
+    this._shadowRoot.innerHTML = `
+    ${styles}
     <div class="container">
       <h3>Lunch</h3>
       <p class="small-info">
@@ -30,6 +33,8 @@
         with the crowd.
       </p>
       <p><b>Date of visit:</b> 02/2020</p>
-    </div>
-  </body>
-</html>
+    </div>`
+  }
+}
+
+window.customElements.define("comment-card", Comment)

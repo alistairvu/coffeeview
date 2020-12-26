@@ -16,6 +16,7 @@ class CafeScreen extends HTMLElement {
     </style>
     <div class="container">
       <info-cards key="${key}"></info-cards>
+      <comment-card></comment-card>
     </div>`
   }
 }

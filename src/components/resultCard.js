@@ -23,8 +23,8 @@ const styles = `
 }
 
 img {
-  width: 15vw;
-  max-height: 15vh; 
+  width: 254px;
+  max-height: 254px; 
 }
 
 .info {
