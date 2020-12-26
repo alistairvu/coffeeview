@@ -14,6 +14,7 @@ class CafeScreen extends HTMLElement {
       padding: 0;
     }
     </style>
+    <header-cafe></header-cafe>
     <div class="container">
       <store-header key="${key}"></store-header>
       <info-cards key="${key}"></info-cards>

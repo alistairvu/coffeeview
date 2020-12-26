@@ -17,6 +17,7 @@ class ResultScreen extends HTMLElement {
 
   connectedCallback() {
     this._shadowRoot.innerHTML = `
+    <header-cafe></header-cafe>
     <div class="results">
       <filter-screen></filter-screen>
     </div>`
