@@ -1,4 +1,4 @@
-import { getDataFromDocs, getDataFromDoc } from "../utils.js";
+import { getDataFromDocs, getDataFromDoc } from "../utils.js"
 const style = `
 .wrapper {
 	padding: 5px;
@@ -27,26 +27,26 @@ const style = `
 }
 
 
-`;
+`
 class TopTrend extends HTMLElement {
-    constructor() {
-        super()
-        this._shadowRoot = this.attachShadow({ mode: 'open' })
-    }
-    async connectedCallback() {
-        const res = await firebase.firestore().collection('cafes').get();
-        const listcafe = getDataFromDocs(res);
-        let html = ``;
-        console.log(listcafe);
-        for (const iterator of listcafe) {
-            html += `
-            <div class="column">
-            <item-trend class="swiper-slide" img='${iterator.img}' district='${iterator.district}' name='${iterator.name}' price='${iterator.price}' ranking='${iterator.reviews}'></item-trend>
-            </div>
+  constructor() {
+    super()
+    this._shadowRoot = this.attachShadow({ mode: "open" })
+  }
+  async connectedCallback() {
+    const res = await firebase.firestore().collection("cafes").get()
+    const cafeList = await res.docs.map((doc) => doc.id)
+    let html = ``
+    console.log(cafeList)
+    for (const iterator of cafeList) {
+      html += `
+        <div class="column">
+            <item-trend class="swiper-slide" key="${iterator}"></item-trend>
+        </div>
             `
-        }
-        console.log(listcafe);
-        this._shadowRoot.innerHTML = `
+    }
+    console.log(cafeList)
+    this._shadowRoot.innerHTML = `
          <style>${style}</style>
 
          <div class="wrapper">
@@ -55,11 +55,6 @@ class TopTrend extends HTMLElement {
             </section>
          </div>
         `
-
-       
-        
-
-    }
-
+  }
 }
-window.customElements.define("top-trend", TopTrend);
+window.customElements.define("top-trend", TopTrend)
