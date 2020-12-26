@@ -1,16 +1,28 @@
 const style = `
     <style>
     #filter-card{
-   
+     padding-left:5vw;
     }
     .container{
       display:grid;
-      margin-left:10vw;
-      margin-right:10vw;
-      grid-template-columns: 1fr 4fr;
+      margin-left:15vw;
+      margin-right:15vw;
+      grid-template-columns: 2fr 3fr;
+     padding-top:10vh;
+      color:black;
     }
     #result-list{
 
+    }
+    h3,h2{
+      text-transform:uppercase;
+      line-height:60%;
+      padding-top:20px;
+      
+    }
+    input,label{
+      
+      margin-left:10px;
     }
     </style>
 `
@@ -30,6 +42,7 @@ class Filter extends HTMLElement {
                 <div><input type="checkbox" name="district" value="Hoàn Kiếm" id="Hoàn Kiếm"><label for="Hoàn Kiếm">Hoàn Kiếm</label></div>
                 <div><input type="checkbox" name="district" value="Đống Đa" id="Đống Đa"><label for="Đống Đa">Đống Đa</label></div>
                 <div><input type="checkbox" name="district" value="Hai Bà Trưng" id="Hai Bà Trưng"><label for="Hai Bà Trưng">Hai Bà Trưng</label></div>
+                <div><input type="checkbox" name="district" value="Tây Hồ" id="Tây Hồ"><label for="Tây Hồ">Tây Hồ</label></div>
             </div>
             <div>
                 <h3>Mức giá</h3>
@@ -55,6 +68,7 @@ class Filter extends HTMLElement {
             </div>
         </form>
         <result-list id="result-list" id-list=""></result-list>
+        
         </div>
         `
     const allCheckboxes = this._shadowDom.querySelectorAll(
@@ -78,12 +92,17 @@ class Filter extends HTMLElement {
     let idList = []
     for (let k of result.keys()) {
       let cafe = result[k]
+      
       for (let key in checkboxValues) {
+     console.log(cafe[key])
         if (key !== "feature" && checkboxValues[key].includes(cafe[key])) {
           cafe.check = true
         } else if (
           key == "feature" &&
           checkboxValues[key].every(function (val) {
+           console.log(cafe[key])
+           console.log(key)
+           console.log(cafe)
             return cafe[key].includes(val)
           })
         ) {
