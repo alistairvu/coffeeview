@@ -32,9 +32,11 @@ const style = `
     cursor: pointer;
     padding-right: 10px;
 }
+.username {
+  color: white;
+}
 
 `
-// import {redirect} from '../index.js'
 class StoryHeader extends HTMLElement {
   constructor() {
     super()
@@ -43,27 +45,36 @@ class StoryHeader extends HTMLElement {
 
   connectedCallback() {
     this._shadowDom.innerHTML = `
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <style>
             ${style}
         </style>
         <div class="container">
             <div class="logo">
-                <img src="./img/endpoint.png" alt="">
                 <div class="branch"><a href="#!/">SHARE STORY</a></div>
             </div>
-            <div class="user-infor">
-                <div class="avatar"><i class="fa fa-user-circle-o" style="color: #fff;font-size:24px"></i></div>
-                <a href="#!/login"><button class="btnLogOut" id='btnLogOut'><i class="fa fa-sign-out" style="font-size:24px;"></i></button></a>
-            </div>
+            ${
+              window.localStorage.getItem("isLoggedIn") === "true"
+                ? `<div class="user-info">
+                <p class="username">Hello, ${
+                  JSON.parse(window.localStorage.getItem("user")).username ||
+                  "user"
+                }!</p>
+                <button class="btnLogOut" id="btnLogOut">Log Out</button>
+            </div>`
+                : `<div class="user-info">
+              <a href="#!/login">
+                <button class="buttonLogIn id="btnLogIn">Log In</button>
+              </a>
+            </div>`
+            }
         </div>
         `
     this._shadowDom
       .querySelector(".btnLogOut")
       .addEventListener("click", () => {
-        localStorage.removeItem("currentUser")
-        // redirect('login')
-        router.navigate("login")
+        localStorage.removeItem("user")
+        localStorage.removeItem("isLoggedIn")
+        location.reload()
       })
   }
 }
