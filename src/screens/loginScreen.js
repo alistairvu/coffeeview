@@ -5,6 +5,7 @@ class LoginScreen extends HTMLElement {
   }
 
   connectedCallback() {
+    document.title = "coffeeview: Log In"
     this._shadowRoot.innerHTML = `
     <style>
     * {
@@ -14,7 +15,7 @@ class LoginScreen extends HTMLElement {
     </style>
     <header-cafe></header-cafe>
     <div class="container">
-      <h1>The Login Screen</h1>
+      <login-comp></login-comp>
     </div>`
   }
 }

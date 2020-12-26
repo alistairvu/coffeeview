@@ -18,6 +18,7 @@ class ResultScreen extends HTMLElement {
   }
 
   connectedCallback() {
+    document.title = "coffeeview: Home"
     this._shadowRoot.innerHTML = `
     <header-cafe></header-cafe>
     <div class="results">
