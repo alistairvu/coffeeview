@@ -70,7 +70,7 @@ class WriteComment extends HTMLElement {
           author: JSON.parse(window.localStorage.getItem("user")).username,
           title: this._shadowRoot.getElementById("title").value,
           content: this._shadowRoot.getElementById("content").value,
-          rating: this._shadowRoot.getElementById("rating").value + ".0",
+          rating: parseInt(this._shadowRoot.getElementById("rating").value),
           time: new Date().toISOString(),
           isShown: true,
         }
