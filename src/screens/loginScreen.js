@@ -5,6 +5,7 @@ class LoginScreen extends HTMLElement {
   }
 
   connectedCallback() {
+    document.title = "coffeeview: Log In"
     this._shadowRoot.innerHTML = `
     <style>
     * {

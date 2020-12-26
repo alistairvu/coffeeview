@@ -36,6 +36,8 @@ class Header extends HTMLElement {
     const res = await collection.doc(key).get()
     const { name, rating, address, price } = res.data()
 
+    document.title = `coffeeview: ${name}`
+
     this._shadowRoot.innerHTML = `
     ${styles}
     <div class="container">
