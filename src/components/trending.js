@@ -1,22 +1,17 @@
 const style= `
-
-h4 {
-    margin-top:0;
-    margin-bottom:0;
-    font-family: 'Oswald', sans-serif;
-}
-.image{
-    display: block;
-    max-width: 254px;
-    max-height: 254px;
-    width: auto;
-    height: auto;
-}
-img{
-    width:100%;
-}
-
-`
+* {
+    margin: 0;
+    padding: 0;
+  }
+  .image {
+    flex: 1;
+    padding:5px;
+  }
+  img {
+    width: 200px;
+    max-height: 150px; 
+  }
+  `
 
 
 class Trending extends HTMLElement {
