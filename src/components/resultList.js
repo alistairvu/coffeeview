@@ -25,9 +25,7 @@ class ResultList extends HTMLElement {
       const res = await collection.get()
       const docs = await res.docs
       const data = docs.map((doc) => doc.id)
-      console.log(data)
       const display = getResultListFromArr(data)
-      console.log(display)
 
       this._shadowRoot.innerHTML = `
     ${styles}

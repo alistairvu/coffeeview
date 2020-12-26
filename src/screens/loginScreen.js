@@ -14,7 +14,7 @@ class LoginScreen extends HTMLElement {
     </style>
     <header-cafe></header-cafe>
     <div class="container">
-      <h1>The Login Screen</h1>
+      <login-comp></login-comp>
     </div>`
   }
 }

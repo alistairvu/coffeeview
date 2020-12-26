@@ -61,7 +61,7 @@ class WriteComment extends HTMLElement {
       .addEventListener("submit", async (e) => {
         e.preventDefault()
         const newComment = {
-          author: "test",
+          author: JSON.parse(window.localStorage.getItem("user")).username,
           title: this._shadowRoot.getElementById("title").value,
           content: this._shadowRoot.getElementById("content").value,
           rating: this._shadowRoot.getElementById("rating").value + ".0",
