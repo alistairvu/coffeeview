@@ -19,20 +19,23 @@ class Comment extends HTMLElement {
     this._shadowRoot = this.attachShadow({ mode: "open" })
   }
 
-  connectedCallback() {
+  async connectedCallback() {
+    const key = this.getAttribute("key")
+    const store = this.getAttribute("store")
+    const data = await firebase.firestore().collection("cafes").doc(store)
+    const res = await data.collection("comments").doc(key).get()
+    const { author, content, rating, title } = await res.data()
+
     this._shadowRoot.innerHTML = `
     ${styles}
     <div class="container">
-      <h3>Lunch</h3>
+      <h3>${title}</h3>
       <p class="small-info">
-        Rating: 5.0 / 5.0 · Reviewed 09/03/2020 by Phoebesmum10
+        Rating: ${rating} / 5.0 · by ${author}
       </p>
       <p>
-        Went to Starbucks twice for lunch, Great service, great food. The first
-        day was pretty crowded but got seats on the second day there. So popular
-        with the crowd.
+        ${content}
       </p>
-      <p><b>Date of visit:</b> 02/2020</p>
     </div>`
   }
 }

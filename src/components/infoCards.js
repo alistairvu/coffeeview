@@ -64,12 +64,6 @@ class InfoCards extends HTMLElement {
   }
 
   async connectedCallback() {
-    this._shadowRoot.innerHTML = `
-    ${styles}
-    <div class="container">
-      <em>Loading info...</em>
-    </div>`
-
     try {
       const key = this.getAttribute("key")
       const collection = firebase.firestore().collection("cafes")
