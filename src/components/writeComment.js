@@ -23,6 +23,12 @@ const styles = `
         margin-bottom: 5px;
       }
 
+      input, textarea {
+        font-family: "Oswald";
+        padding-left: 5px;
+        padding-right: 5px;
+      }
+
       input::-webkit-outer-spin-button,
       input::-webkit-inner-spin-button {
         -webkit-appearance: none;

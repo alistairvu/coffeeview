@@ -11,6 +11,12 @@ const styles = `
         margin: 10px auto;
         padding: 5px;
       }
+
+      .delete {
+        margin-top: 0.3rem;
+        font-size: 0.7rem;
+        cursor: pointer;
+      }
     </style>`
 
 class Comment extends HTMLElement {
@@ -36,7 +42,31 @@ class Comment extends HTMLElement {
       <p>
         ${content}
       </p>
+      ${
+        JSON.parse(localStorage.getItem("user")).username === author
+          ? `<p class="delete" id="delete">Delete</p>`
+          : ""
+      }
     </div>`
+
+    this._shadowRoot
+      .getElementById("delete")
+      .addEventListener("click", async () => {
+        const confirmDelete = confirm("Do you want to delete this comment?")
+
+        if (confirmDelete) {
+          await data
+            .collection("comments")
+            .doc(key)
+            .update({
+              isShown: false,
+            })
+            .then(() => {
+              alert("Comment is deleted!")
+              setTimeout(() => location.reload(), 500)
+            })
+        }
+      })
   }
 }
 
