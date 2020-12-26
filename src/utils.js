@@ -36,3 +36,12 @@ export function nonAccentVietnamese(str) {
   str = str.replace(/\u02C6|\u0306|\u031B/g, "")
   return str
 }
+export function getDataFromDoc(doc) {
+  const data = doc.data()
+  data.id = doc.id
+  return data
+}
+// lay du lieu tu get many document
+export function getDataFromDocs(docs) {
+  return docs.docs.map(getDataFromDoc);
+}

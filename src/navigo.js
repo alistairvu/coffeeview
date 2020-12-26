@@ -7,12 +7,15 @@ const rootElement = document.getElementById("root")
 
 router
   .on(function () {
-    rootElement.innerHTML = `<result-screen></result-screen>`
+    rootElement.innerHTML = `<home-screen></home-screen>`
   })
   .resolve()
 
 router
   .on({
+    "/cafe": function () {
+      rootElement.innerHTML = `<result-screen></result-screen>`
+    },
     "/cafe/:key": function ({ key }) {
       rootElement.innerHTML = `<cafe-screen key="${key}"></cafe-screen>`
     },

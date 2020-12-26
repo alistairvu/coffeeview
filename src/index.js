@@ -13,7 +13,10 @@ import "./components/commentList.js"
 import "./components/loginComp.js"
 import "./components/registerComp.js"
 import "./components/pleaseLogIn.js"
+import './components/listtrending.js'
+import './components/trending.js'
 
 import "./screens/resultScreen.js"
 import "./screens/cafeScreen.js"
+import './screens/homeScreen.js'
 import "./screens/loginScreen.js"
