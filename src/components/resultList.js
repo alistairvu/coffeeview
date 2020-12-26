@@ -16,9 +16,6 @@ class ResultList extends HTMLElement {
   }
 
   async connectedCallback() {
-    this._shadowRoot.innerHTML = `
-    <em>Loading...</em>`
-
     const idListString = this.getAttribute("id-list")
 
     if (idListString.length == 0) {
@@ -50,8 +47,6 @@ class ResultList extends HTMLElement {
   }
 
   attributeChangedCallback(name, oldVal, newVal) {
-    this._shadowRoot.innerHTML = `<em>Loading...</em>`
-
     const idList = JSON.parse(newVal)
     const display = getResultListFromArr(idList)
     console.log(display)

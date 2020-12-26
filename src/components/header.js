@@ -3,6 +3,13 @@ const style = `
     margin: 0;
     padding: 0;
 }
+
+.branch {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 .container{
     background-color:black;
     display: flex;
@@ -50,7 +57,7 @@ class StoryHeader extends HTMLElement {
         </style>
         <div class="container">
             <div class="logo">
-                <div class="branch"><a href="#!/">SHARE STORY</a></div>
+              <a href="#!/"><div class="branch">coffeeview</div></a>
             </div>
             ${
               window.localStorage.getItem("isLoggedIn") === "true"
