@@ -15,7 +15,7 @@ const styles = `
         text-transform:uppercase;
         font-size:300%;
         color:white;
-        background-color:black;
+        background-color: #3c3a3b;
         text-align:center
        
       }
