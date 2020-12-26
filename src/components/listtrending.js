@@ -34,10 +34,14 @@ class TopTrend extends HTMLElement {
     this._shadowRoot = this.attachShadow({ mode: "open" })
   }
   async connectedCallback() {
-    const res = await firebase.firestore().collection("cafes").get()
+    const res = await firebase
+      .firestore()
+      .collection("cafes")
+      .orderBy("rating", "desc")
+      .limit(6)
+      .get()
     const cafeList = await res.docs.map((doc) => doc.id)
     let html = ``
-    console.log(cafeList)
     for (const iterator of cafeList) {
       html += `
         <div class="column">
@@ -45,7 +49,6 @@ class TopTrend extends HTMLElement {
         </div>
             `
     }
-    console.log(cafeList)
     this._shadowRoot.innerHTML = `
          <style>${style}</style>
 
