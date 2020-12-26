@@ -9,6 +9,21 @@ const styles = `
         width: 60vw;
         margin: 0 auto;
         margin-top: 5vh;
+      
+        
+
+      }
+      h1{
+        font-size:500%;
+      }
+      .rating-card{
+        
+       width:20vw;
+      }
+      .details-card{
+        
+        width:40vw;
+       
       }
 
       @media (max-width: 729px) {
@@ -30,10 +45,9 @@ const styles = `
       }
 
       .card {
-        width: 25vw;
-        height: 200px;
+        
         padding: 5px;
-        border: 1px solid black;
+       
       }
 
       @media (max-width: 729px) {
@@ -83,7 +97,7 @@ class InfoCards extends HTMLElement {
       <div class="cards">
         <div class="rating-card card">
           <h2>Ratings and reviews</h2>
-          <h3>${rating} / 5.0</h3>
+          <h1>${rating}/5.0</h1>
           <p><em>${reviews} ${reviews == 1 ? "review" : "reviews"}</em></p>
         </div>
         <div class="details-card card">
@@ -104,7 +118,8 @@ class InfoCards extends HTMLElement {
           </div>
         </div>
       </div>
-    </div>`
+    </div>
+    <br>`
     } catch (e) {
       this._shadowRoot.innerHTML = `
       ${styles}

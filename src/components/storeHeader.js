@@ -13,6 +13,7 @@ const styles = `
       }
       h1{
         text-transform:uppercase;
+        font-size:300%
        
       }
 </style>`
@@ -46,9 +47,9 @@ class Header extends HTMLElement {
       <br>
       <h1>${name}</h1>
       <div class="data">
-        <p>Rating: ${rating} / 5.0 · ${fromNumberToDollar(price)}</p>
+        <h3>Rating: ${rating}/5.0 · ${fromNumberToDollar(price)}</h3>
       </div>
-      <p>${address}</p>
+      <h3>${address}</h3>
     </div>`
   }
 }

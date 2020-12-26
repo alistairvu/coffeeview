@@ -1,3 +1,4 @@
+
 class CafeScreen extends HTMLElement {
   constructor() {
     super()
@@ -12,6 +13,9 @@ class CafeScreen extends HTMLElement {
     * {
       margin: 0;
       padding: 0;
+    }
+    h1{
+      font-size:150%
     }
     </style>
     <header-cafe></header-cafe>

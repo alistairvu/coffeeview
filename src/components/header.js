@@ -11,7 +11,7 @@ const style = `
 }
 
 .container{
-    background-color:black;
+    background-color:#3c3a3b;
     display: flex;
     justify-content: space-between;
     align-items: center;
