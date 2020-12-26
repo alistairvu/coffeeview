@@ -16,6 +16,11 @@ const styles = `
         font-size:300%
        
       }
+      
+      .back-arrow {
+        color: black;
+        text-decoration: none;
+      }
 </style>`
 
 import { fromNumberToDollar } from "../utils.js"
@@ -43,7 +48,9 @@ class Header extends HTMLElement {
     this._shadowRoot.innerHTML = `
     ${styles}
     <div class="container">
-      <br>
+      <a href="#!/cafe" class="back-arrow">
+        <h3>← Return to results</h3>
+      </a>
       <br>
       <h1>${name}</h1>
       <div class="data">

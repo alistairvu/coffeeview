@@ -7,10 +7,8 @@ h4 {
 }
 .image{
     display: block;
-    max-width: 254px;
-    max-height: 254px;
+    height: 150px;
     width: auto;
-    height: auto;
 }
 
 img{

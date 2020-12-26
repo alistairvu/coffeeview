@@ -1,4 +1,3 @@
-
 class CafeScreen extends HTMLElement {
   constructor() {
     super()
