@@ -65,6 +65,8 @@ class WriteComment extends HTMLElement {
           title: this._shadowRoot.getElementById("title").value,
           content: this._shadowRoot.getElementById("content").value,
           rating: this._shadowRoot.getElementById("rating").value + ".0",
+          time: new Date().toISOString(),
+          isShown: true,
         }
         const collection = await firebase
           .firestore()

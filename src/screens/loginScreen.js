@@ -16,6 +16,7 @@ class LoginScreen extends HTMLElement {
     <header-cafe></header-cafe>
     <div class="container">
       <login-comp></login-comp>
+      <register-comp></register-comp>
     </div>`
   }
 }

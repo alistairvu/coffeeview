@@ -11,6 +11,7 @@ import "./components/writeComment.js"
 import "./components/commentCard.js"
 import "./components/commentList.js"
 import "./components/loginComp.js"
+import "./components/registerComp.js"
 import "./components/pleaseLogIn.js"
 
 import "./screens/resultScreen.js"
