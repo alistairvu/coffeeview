@@ -9,6 +9,10 @@ const styles = `
         width: 60vw;
         margin: 10px auto;
         padding: 5px;
+
+      }
+      h1{
+        text-transform:uppercase;
       }
 </style>`
 
@@ -35,7 +39,7 @@ class Header extends HTMLElement {
     this._shadowRoot.innerHTML = `
     ${styles}
     <div class="container">
-      <h2>${name}</h2>
+      <h1>${name}</h1>
       <div class="data">
         <p>Rating: ${rating} / 5.0 · ${fromNumberToDollar(price)}</p>
       </div>

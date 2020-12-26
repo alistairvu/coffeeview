@@ -5,7 +5,7 @@ const style =`
     padding: 0;
 }
 .container{
-    background-color: #1976D2;
+    background-color:black;
     display: flex;
     justify-content: space-between;
     align-items: center;

@@ -1,14 +1,17 @@
 const style = `
     <style>
     #filter-card{
-     padding-left:5vw;
+     margin:2vw;
+      
+     padding:3vw;
+     background-color:#f3f3f3;
     }
     .container{
       display:grid;
       margin-left:15vw;
       margin-right:15vw;
       grid-template-columns: 2fr 3fr;
-     padding-top:10vh;
+     
       color:black;
     }
     #result-list{
@@ -23,6 +26,11 @@ const style = `
     input,label{
       
       margin-left:10px;
+    }
+    input:checked {
+    background-color:black;
+    color:white
+    
     }
     </style>
 `
