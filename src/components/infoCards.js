@@ -149,6 +149,7 @@ class InfoCards extends HTMLElement {
     </div>
     <br>`
     } catch (e) {
+      console.error(e)
       this._shadowRoot.innerHTML = `
       ${styles}
       <div class="container">
