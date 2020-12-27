@@ -45,13 +45,14 @@ const style = `
 }
 
 `
+import { getDataFromDocs ,getDataFromDoc} from "../utils.js"
 class StoryHeader extends HTMLElement {
   constructor() {
     super()
     this._shadowDom = this.attachShadow({ mode: "open" })
   }
 
-  connectedCallback() {
+  async connectedCallback() {
     this._shadowDom.innerHTML = `
         <style>
             ${style}
@@ -61,6 +62,15 @@ class StoryHeader extends HTMLElement {
               <a href="#!/"><div class="branch">coffeeview</div></a>
             
             </div>
+            <div class='searchBar'>
+              <input type="text" id="myInput" placeholder="Search for names.." list="ProductsList" title="Type in a name">
+              <input type="submit">
+              <datalist id="ProductsList">
+
+              </datalist>
+            </div>
+
+
             ${
               window.localStorage.getItem("isLoggedIn") === "true"
                 ? `<div class="user-info">
@@ -78,13 +88,40 @@ class StoryHeader extends HTMLElement {
             }
         </div>
         `
-    this._shadowDom
-      .querySelector(".btnLogOut")
-      .addEventListener("click", () => {
-        localStorage.removeItem("user")
-        localStorage.removeItem("isLoggedIn")
-        location.reload()
+    // this._shadowDom
+    //   .querySelector(".btnLogOut")
+    //   .addEventListener("click", () => {
+    //     localStorage.removeItem("user")
+    //     localStorage.removeItem("isLoggedIn")
+    //     location.reload()
+    //   })
+
+      const res = await firebase.firestore().collection('cafes').get()
+      const data = getDataFromDocs(res)
+      const listArr = []
+
+      for (const iterator of data) {
+        listArr.push(iterator.name)
+        
+      }
+      console.log(listArr)
+      let html =''
+      let ProductsList = this._shadowDom.querySelector('#ProductsList')
+
+      listArr.forEach(element =>{
+        html+=`
+          <option value="${element}" />
+        `
       })
+      ProductsList.innerHTML=`
+        ${html}
+
+      `
+      console.log(ProductsList)
+
+        
+      }
   }
-}
+  
+
 window.customElements.define("header-cafe", StoryHeader)
