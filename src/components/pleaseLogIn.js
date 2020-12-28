@@ -11,6 +11,12 @@ const styles = `
         border: solid black 1px;
         padding: 5px;
       }
+
+      @media (max-width: 729px) {
+        .container {
+          width: 100vw;
+        }
+      }
 </style>
 `
 

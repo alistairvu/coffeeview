@@ -1,4 +1,3 @@
-
 const style = `
 *{
     margin: 0;
@@ -9,6 +8,12 @@ const style = `
   color: white;
   text-decoration: none;
   cursor: pointer;
+  font-family: 'Libre Baskerville', serif;
+  font-weight: 700;
+}
+
+.branch:active, .branch:focus {
+  outline: none;
 }
 
 .container{
@@ -30,11 +35,15 @@ const style = `
     
 }
 .btn{
-    background-color: transparent;
+    background-color: white;
+    text-transform: uppercase;
     border: none;
-    color: #fff;
+    color: black;
     outline: none;
     cursor: pointer;
+    padding: 2px;
+    margin-left: 10px;
+    font-family: "Oswald";
 }
 .avatar{
     cursor: pointer;
@@ -44,8 +53,17 @@ const style = `
   color: white;
 }
 
+a:active, a:focus {
+  outline: none;
+}
+
+.user-info {
+  display: flex;
+}
+
+
 `
-import "./searchHint.js" 
+import "./searchHint.js"
 class StoryHeader extends HTMLElement {
   constructor() {
     super()
@@ -60,7 +78,6 @@ class StoryHeader extends HTMLElement {
         <div class="container">
             <div class="logo">
               <a href="#!/"><div class="branch">coffeeview</div></a>
-            
             </div>
             
 
@@ -72,26 +89,24 @@ class StoryHeader extends HTMLElement {
                   JSON.parse(window.localStorage.getItem("user")).username ||
                   "user"
                 }!</p>
-                <button class="btnLogOut" id="btnLogOut">Log Out</button>
+                <button class="btn btnLogOut" id="btnLogOut">Log Out</button>
             </div>`
                 : `<div class="user-info">
               <a href="#!/login">
-                <button class="buttonLogIn id="btnLogIn">Log In</button>
+                <button class="btn btnLogIn" id="btnLogIn">Log In</button>
               </a>
             </div>`
             }
         </div>
         `
-    // this._shadowDom
-    //   .querySelector(".btnLogOut")
-    //   .addEventListener("click", () => {
-    //     localStorage.removeItem("user")
-    //     localStorage.removeItem("isLoggedIn")
-    //     location.reload()
-    //   })
-  
-      }
+    this._shadowDom
+      .querySelector(".btnLogOut")
+      .addEventListener("click", () => {
+        localStorage.removeItem("user")
+        localStorage.removeItem("isLoggedIn")
+        location.reload()
+      })
   }
-  
+}
 
 window.customElements.define("header-cafe", StoryHeader)
