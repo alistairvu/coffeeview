@@ -12,6 +12,12 @@ const styles = `
         padding: 5px;
       }
 
+      @media (max-width: 729px) {
+        .container {
+          width: 100vw;
+        }
+      }
+
       .delete {
         margin-top: 0.3rem;
         font-size: 0.7rem;

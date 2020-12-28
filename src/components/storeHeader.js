@@ -28,9 +28,8 @@ const styles = `
       @media (max-width: 729px) {
         
          .container {
-         padding:5vw;
-         margin:5vw;
-         width:90vw;
+
+         width:100vw;
         }
        
       }

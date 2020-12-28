@@ -1,4 +1,3 @@
-
 const style = `
 *{
     margin: 0;
@@ -9,6 +8,12 @@ const style = `
   color: white;
   text-decoration: none;
   cursor: pointer;
+  font-family: 'Libre Baskerville', serif;
+  font-weight: 700;
+}
+
+.branch:active, .branch:focus {
+  outline: none;
 }
 
 .container{
@@ -45,7 +50,7 @@ const style = `
 }
 
 `
-import "./searchHint.js" 
+import "./searchHint.js"
 class StoryHeader extends HTMLElement {
   constructor() {
     super()
@@ -60,11 +65,8 @@ class StoryHeader extends HTMLElement {
         <div class="container">
             <div class="logo">
               <a href="#!/"><div class="branch">coffeeview</div></a>
-            
             </div>
             <search-hint></search-hint>
-
-
             ${
               window.localStorage.getItem("isLoggedIn") === "true"
                 ? `<div class="user-info">
@@ -82,16 +84,14 @@ class StoryHeader extends HTMLElement {
             }
         </div>
         `
-    // this._shadowDom
-    //   .querySelector(".btnLogOut")
-    //   .addEventListener("click", () => {
-    //     localStorage.removeItem("user")
-    //     localStorage.removeItem("isLoggedIn")
-    //     location.reload()
-    //   })
-  
-      }
+    this._shadowDom
+      .querySelector(".btnLogOut")
+      .addEventListener("click", () => {
+        localStorage.removeItem("user")
+        localStorage.removeItem("isLoggedIn")
+        location.reload()
+      })
   }
-  
+}
 
 window.customElements.define("header-cafe", StoryHeader)

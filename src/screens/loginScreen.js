@@ -1,3 +1,11 @@
+const styles = `
+.container {
+  display: flex;
+  justify-content: space-between;
+  width: 60vw;
+  margin: 0 auto;
+}`
+
 class LoginScreen extends HTMLElement {
   constructor() {
     super()
@@ -12,6 +20,7 @@ class LoginScreen extends HTMLElement {
       margin: 0;
       padding: 0;
     }
+    ${styles}
     </style>
     <header-cafe></header-cafe>
     <div class="container">
