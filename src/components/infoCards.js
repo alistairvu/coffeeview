@@ -103,13 +103,7 @@ class InfoCards extends HTMLElement {
       const res = await collection.doc(key).get()
       const data = await res.data()
       const { rating, reviews, address, phone, hours, feature } = data
-      let features=''
-      for(let feat of feature){
-        if(!features){
-          features+=feat
-        }
-        else{features+=`, ${feat}`}
-      }
+      const features = feature.join(", ")
       this._shadowRoot.innerHTML = `
     ${styles}
     <div class="container">
