@@ -55,7 +55,9 @@ class Filter extends HTMLElement {
     this._shadowDom.innerHTML = `
         ${style}
         <div class="container">
+        
         <form id="filter-card">
+            <search-hint></search-hint>
             <div>
                 <h3>Địa điểm</h3>
                 <div><input type="checkbox" name="district" value="Cầu Giấy" id="Cầu Giấy"><label for="Cầu Giấy">Cầu Giấy</label></div>

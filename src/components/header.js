@@ -62,7 +62,7 @@ class StoryHeader extends HTMLElement {
               <a href="#!/"><div class="branch">coffeeview</div></a>
             
             </div>
-            <search-hint></search-hint>
+            
 
 
             ${

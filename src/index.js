@@ -15,6 +15,7 @@ import "./components/registerComp.js"
 import "./components/pleaseLogIn.js"
 import "./components/listTrending.js"
 import "./components/trending.js"
+import "./components/gridImgs.js"
 
 import "./screens/resultScreen.js"
 import "./screens/cafeScreen.js"

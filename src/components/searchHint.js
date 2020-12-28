@@ -41,6 +41,7 @@ class SearchHint extends HTMLElement {
     let textSearch = this._shadowDom.querySelector("#myInput");
 
     textSearch.addEventListener("keyup", async () => {
+    try {
       const nameSearch = textSearch.value;
       console.log(nameSearch);
       // let firstRun = ''
@@ -56,6 +57,9 @@ class SearchHint extends HTMLElement {
         e.preventDefault()
         router.navigate(`/cafe/${id}`)
       })
+    } catch (e) {
+      console.error(e)
+    }
     });
     //   const result = await firebase.firestore().collection('cafes').where('name', '==' ,  textSearch).get()
   }

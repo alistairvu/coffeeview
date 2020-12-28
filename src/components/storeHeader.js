@@ -44,6 +44,7 @@ const styles = `
 </style>`
 
 import { fromNumberToDollar } from "../utils.js"
+// import './gridImgs.js'
 
 class Header extends HTMLElement {
   constructor() {
@@ -74,6 +75,7 @@ class Header extends HTMLElement {
       </a>
       <br>
       <h1>${name}</h1>
+      
       <div class="data">
         <h3>${
           reviews <= 0 ? "No reviews yet" : `Rating: ${rating.toFixed(1)}/5.0`
