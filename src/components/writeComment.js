@@ -9,17 +9,19 @@ const styles = `
         width: 60vw;
         margin: 10px auto;
         border: solid black 1px;
-        padding: 1vw;
+        text-align:center;
         display:border-box
       }
 
       .input {
-        width: 90%;
+        width: 55vw;
         resize: none;
+        
       }
 
       .title {
-        width: 100%;
+        width: 55vw;
+       
         height: 2rem;
         margin-bottom: 5px;
       }
@@ -43,12 +45,26 @@ const styles = `
         font-family:Oswald;
         padding:5px;
       }
-      p,button,h3{
+      h2{
         text-align:center;
-        color:white
+        color:white;
+       
+      }
+      p{
+        color:white;
+       
       }
       .container{
         background-color:black
+      }
+      button{
+        background-color:white;
+        border:none;
+        font-size:150%;
+      }
+      button:hover{
+        background-color:#9d9d9d;
+        
       }
     </style>`
 
@@ -63,11 +79,13 @@ class WriteComment extends HTMLElement {
     ${styles}
     <div class="container">
       <form id="review-form">
-        <h3>Write a Review!</h3>
+        <h2>Write a Review!</h2>
+       
         <input class="title" name="title" type="text" placeholder="Title" id="title"></input>
         <textarea rows="6" name="content" id="content" class="input" placeholder="Type your review..."></textarea>
+        <p>Rating: <input type="number" min="1" max="5" name="rating" id="rating"></input></p>
         <div class="rating">
-          <p>Rating: <input type="number" min="1" max="5" name="rating" id="rating"></input></p>
+         
         </div>
         <button type="submit">Submit</button>
       </form>

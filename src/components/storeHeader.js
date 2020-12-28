@@ -15,7 +15,13 @@ const styles = `
         text-transform:uppercase;
         font-size:300%;
         color:white;
-        background-color: #3c3a3b;
+        background-color: black;
+        text-align:center
+       
+      }
+      .data{
+        color:white;
+        background-color:black;
         text-align:center
        
       }
@@ -28,7 +34,9 @@ const styles = `
         }
        
       }
-      
+      a:hover{
+        color:#5c5b5b
+      }
       .back-arrow {
         color: black;
         text-decoration: none;
@@ -60,6 +68,7 @@ class Header extends HTMLElement {
     this._shadowRoot.innerHTML = `
     ${styles}
     <div class="container">
+    <br>
       <a href="#!/cafe" class="back-arrow">
         <h3>← Return to results</h3>
       </a>
@@ -69,8 +78,9 @@ class Header extends HTMLElement {
         <h3>${
           reviews <= 0 ? "No reviews yet" : `Rating: ${rating.toFixed(1)}/5.0`
         } · ${fromNumberToDollar(price)}</h3>
+        <h3>${address}</h3>
       </div>
-      <h3>${address}</h3>
+     
     </div>`
   }
 }

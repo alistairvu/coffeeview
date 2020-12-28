@@ -17,12 +17,14 @@ const styles = `
         font-size:400%;
       }
       .rating-card{
-        
-       width:20vw;
+        text-align:center;
+       width:25vw;
+      
+     
       }
       .details-card{
         
-        width:40vw;
+        width:35vw;
        
       }
 
@@ -46,6 +48,7 @@ const styles = `
         margin-top: 5vh;
         display: flex;
         justify-content: space-between;
+        
       }
 
       @media (max-width: 480px) {
@@ -146,6 +149,7 @@ class InfoCards extends HTMLElement {
     </div>
     <br>`
     } catch (e) {
+      console.error(e)
       this._shadowRoot.innerHTML = `
       ${styles}
       <div class="container">
