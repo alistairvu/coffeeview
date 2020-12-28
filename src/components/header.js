@@ -45,7 +45,7 @@ const style = `
 }
 
 `
-import { getDataFromDocs ,getDataFromDoc} from "../utils.js"
+import "./searchHint.js" 
 class StoryHeader extends HTMLElement {
   constructor() {
     super()
@@ -62,13 +62,7 @@ class StoryHeader extends HTMLElement {
               <a href="#!/"><div class="branch">coffeeview</div></a>
             
             </div>
-            <div class='searchBar'>
-              <input type="text" id="myInput" placeholder="Search for names.." list="ProductsList" title="Type in a name">
-              <input type="submit">
-              <datalist id="ProductsList">
-
-              </datalist>
-            </div>
+            <search-hint></search-hint>
 
 
             ${
@@ -95,31 +89,7 @@ class StoryHeader extends HTMLElement {
     //     localStorage.removeItem("isLoggedIn")
     //     location.reload()
     //   })
-
-      const res = await firebase.firestore().collection('cafes').get()
-      const data = getDataFromDocs(res)
-      const listArr = []
-
-      for (const iterator of data) {
-        listArr.push(iterator.name)
-        
-      }
-      console.log(listArr)
-      let html =''
-      let ProductsList = this._shadowDom.querySelector('#ProductsList')
-
-      listArr.forEach(element =>{
-        html+=`
-          <option value="${element}" />
-        `
-      })
-      ProductsList.innerHTML=`
-        ${html}
-
-      `
-      console.log(ProductsList)
-
-        
+  
       }
   }
   

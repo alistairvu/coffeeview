@@ -20,3 +20,4 @@ import "./screens/resultScreen.js"
 import "./screens/cafeScreen.js"
 import './screens/homeScreen.js'
 import "./screens/loginScreen.js"
+import "./components/searchHint.js"

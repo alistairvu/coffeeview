@@ -143,7 +143,7 @@ class Filter extends HTMLElement {
   grabCheckboxValues() {
     let criteria = {}
     const allCheckboxes = this._shadowDom.querySelectorAll(
-      "input[type=checkbox]"
+      "input[type=checkbox]" 
     )
 
     allCheckboxes.forEach((checkbox) => {
