@@ -22,6 +22,9 @@ router
     "/login": function () {
       rootElement.innerHTML = `<login-screen></login-screen>`
     },
+    "/create": function () {
+      rootElement.innerHTML = `<create-store-screen></create-store-screen>`
+    },
   })
   .resolve()
 

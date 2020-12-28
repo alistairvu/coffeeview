@@ -15,11 +15,14 @@ img{
     width:100%;
 }
 
-a {
-  color: black;
-  text-decoration: none;
-}
-
+a{
+    text-decoration: none;
+    color:black;
+  }
+  a:hover {
+    color: #3c3a3b;
+   
+  }
 `
 
 class Trending extends HTMLElement {
@@ -41,6 +44,7 @@ class Trending extends HTMLElement {
     this._shadowRoot.innerHTML = `
 
         <style>${style}</style>
+        <a href="#!/cafe/${key}">
         <div class="item-trend"> 
             <div class='image'><img class='img' src="${img}" alt="ảnh"></div>
             <div class='content'>
@@ -54,7 +58,7 @@ class Trending extends HTMLElement {
                 <div class="money">${money}</div>
             </div> 
         </div>
-
+       </a>
         `
   }
 }

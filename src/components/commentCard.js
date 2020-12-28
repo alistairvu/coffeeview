@@ -37,7 +37,7 @@ class Comment extends HTMLElement {
     <div class="container">
       <h3>${title}</h3>
       <p class="small-info">
-        Rating: ${rating.toFixed(1)} / 5.0 · by ${author}
+        Rating: ${rating.toFixed(1)} / 5.0 • by ${author}
       </p>
       <p>
         ${content}

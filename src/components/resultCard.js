@@ -102,7 +102,7 @@ class ResultCard extends HTMLElement {
           reviews > 0
             ? `<b>${rating.toFixed(1)}/5.0</b> (${reviews})`
             : `<span>No reviews yet</span>`
-        } · ${fromNumberToDollar(price)}</div> 
+        } • ${fromNumberToDollar(price)}</div> 
         <div class="address">
           ${address}
         </div>

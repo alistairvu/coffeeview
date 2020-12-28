@@ -1,5 +1,7 @@
 import { getDataFromDocs, getDataFromDoc } from "../utils.js"
 const style = `
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+
 .wrapper {
 	padding: 5px;
 	max-width: 960px;
@@ -25,7 +27,26 @@ const style = `
 	&:last-child { margin-right: 0; }
 	
 }
-
+.wrapper {
+    width: 45vw;
+    height: 150px;
+   
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    background-color:#f5f5f5;
+    padding-bottom:20px;
+    padding-top:20px;
+    padding-left:20px;
+  
+  }
+  .wrapper:hover{
+    background-color:#ebebeb;
+  }
 
 `
 class TopTrend extends HTMLElement {

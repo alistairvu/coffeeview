@@ -21,6 +21,8 @@ class HomeScreen extends HTMLElement {
         <header-cafe></header-cafe>
         <h1>TRENDING</h1>
         <top-trend></top-trend>
+        
+        </div>
         <button class="btn">show more</button>
         `
     this._shadowRoot.querySelector(".btn").addEventListener("click", () => {

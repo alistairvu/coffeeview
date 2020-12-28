@@ -119,12 +119,7 @@ class Filter extends HTMLElement {
           cafe.check = true
         } else if (
           key == "feature" &&
-          checkboxValues[key].every(function (val) {
-            console.log(cafe[key])
-            console.log(key)
-            console.log(cafe)
-            return cafe[key].includes(val)
-          })
+          checkboxValues[key].every((val) => cafe[key].includes(val))
         ) {
           cafe.check = true
         } else {
