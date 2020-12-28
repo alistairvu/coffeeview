@@ -57,6 +57,7 @@ class Filter extends HTMLElement {
         <div class="container">
         <form id="filter-card">
             <div>
+              <i class="fa fa-user-o" aria-hidden="true"></i>
                 <h3>Địa điểm</h3>
                 <div><input type="checkbox" name="district" value="Cầu Giấy" id="Cầu Giấy"><label for="Cầu Giấy">Cầu Giấy</label></div>
                 <div><input type="checkbox" name="district" value="Hoàn Kiếm" id="Hoàn Kiếm"><label for="Hoàn Kiếm">Hoàn Kiếm</label></div>

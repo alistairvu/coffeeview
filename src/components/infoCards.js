@@ -17,8 +17,12 @@ const styles = `
         font-size:400%;
       }
       .rating-card{
-        text-align:center;
+        
        width:25vw;
+       display: flex;
+       flex-direction:column;
+  justify-content: center;
+  align-items: center;
       
      
       }
