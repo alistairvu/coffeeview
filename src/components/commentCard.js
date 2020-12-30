@@ -12,6 +12,12 @@ const styles = `
         padding: 5px;
       }
 
+      @media (max-width: 729px) {
+        .container {
+          width: 100vw;
+        }
+      }
+
       .delete {
         margin-top: 0.3rem;
         font-size: 0.7rem;
@@ -37,7 +43,7 @@ class Comment extends HTMLElement {
     <div class="container">
       <h3>${title}</h3>
       <p class="small-info">
-        Rating: ${rating.toFixed(1)} / 5.0 · by ${author}
+        Rating: ${rating.toFixed(1)} / 5.0 • by ${author}
       </p>
       <p>
         ${content}

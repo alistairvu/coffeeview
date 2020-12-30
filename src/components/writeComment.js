@@ -66,6 +66,12 @@ const styles = `
         background-color:#9d9d9d;
         
       }
+
+      @media (max-width: 729px) {
+        .container {
+          width: 100vw;
+        }
+      }
     </style>`
 
 class WriteComment extends HTMLElement {

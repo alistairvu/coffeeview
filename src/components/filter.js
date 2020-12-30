@@ -55,7 +55,9 @@ class Filter extends HTMLElement {
     this._shadowDom.innerHTML = `
         ${style}
         <div class="container">
+        
         <form id="filter-card">
+            <search-hint></search-hint>
             <div>
                 <h3>Địa điểm</h3>
                 <div><input type="checkbox" name="district" value="Cầu Giấy" id="Cầu Giấy"><label for="Cầu Giấy">Cầu Giấy</label></div>
@@ -119,12 +121,7 @@ class Filter extends HTMLElement {
           cafe.check = true
         } else if (
           key == "feature" &&
-          checkboxValues[key].every(function (val) {
-            console.log(cafe[key])
-            console.log(key)
-            console.log(cafe)
-            return cafe[key].includes(val)
-          })
+          checkboxValues[key].every((val) => cafe[key].includes(val))
         ) {
           cafe.check = true
         } else {
@@ -143,7 +140,7 @@ class Filter extends HTMLElement {
   grabCheckboxValues() {
     let criteria = {}
     const allCheckboxes = this._shadowDom.querySelectorAll(
-      "input[type=checkbox]"
+      "input[type=checkbox]" 
     )
 
     allCheckboxes.forEach((checkbox) => {
