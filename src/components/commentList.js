@@ -20,7 +20,7 @@ class CommentList extends HTMLElement {
       .get()
     const docs = await res.docs
     const dataRaw = docs.map((doc) => ({ id: doc.id, time: doc.data().time }))
-    console.log(dataRaw)
+    // console.log(dataRaw)
     const data = dataRaw
       .sort((a, b) => Date.parse(b.time) - Date.parse(a.time))
       .map((doc) => doc.id)

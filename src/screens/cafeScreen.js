@@ -21,6 +21,7 @@ class CafeScreen extends HTMLElement {
     <header-cafe></header-cafe>
     <div class="container">
       <store-header key="${key}"></store-header>
+      <grid-images key="${key}"></grid-images>
       <info-cards key="${key}"></info-cards>
       ${
         window.localStorage.getItem("isLoggedIn") === "true"

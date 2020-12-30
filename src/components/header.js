@@ -35,11 +35,15 @@ const style = `
     
 }
 .btn{
-    background-color: transparent;
+    background-color: white;
+    text-transform: uppercase;
     border: none;
-    color: #fff;
+    color: black;
     outline: none;
     cursor: pointer;
+    padding: 2px;
+    margin-left: 10px;
+    font-family: "Oswald";
 }
 .avatar{
     cursor: pointer;
@@ -48,6 +52,15 @@ const style = `
 .username {
   color: white;
 }
+
+a:active, a:focus {
+  outline: none;
+}
+
+.user-info {
+  display: flex;
+}
+
 
 `
 import "./searchHint.js"
@@ -66,7 +79,9 @@ class StoryHeader extends HTMLElement {
             <div class="logo">
               <a href="#!/"><div class="branch">coffeeview</div></a>
             </div>
-            <search-hint></search-hint>
+            
+
+
             ${
               window.localStorage.getItem("isLoggedIn") === "true"
                 ? `<div class="user-info">
@@ -74,11 +89,11 @@ class StoryHeader extends HTMLElement {
                   JSON.parse(window.localStorage.getItem("user")).username ||
                   "user"
                 }!</p>
-                <button class="btnLogOut" id="btnLogOut">Log Out</button>
+                <button class="btn btnLogOut" id="btnLogOut">Log Out</button>
             </div>`
                 : `<div class="user-info">
               <a href="#!/login">
-                <button class="buttonLogIn id="btnLogIn">Log In</button>
+                <button class="btn btnLogIn" id="btnLogIn">Log In</button>
               </a>
             </div>`
             }

@@ -55,7 +55,9 @@ class Filter extends HTMLElement {
     this._shadowDom.innerHTML = `
         ${style}
         <div class="container">
+        
         <form id="filter-card">
+            <search-hint></search-hint>
             <div>
               <i class="fa fa-user-o" aria-hidden="true"></i>
                 <h3>Địa điểm</h3>
