@@ -29,7 +29,9 @@ class CafeScreen extends HTMLElement {
           : `<please-log-in></please-log-in>`
       }
       <comment-list store="${key}"></comment-list>
-    </div>`
+    </div>
+    <footer-cafe></footer-cafe>
+    `
   }
 }
 

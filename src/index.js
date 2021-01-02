@@ -17,6 +17,7 @@ import "./components/listTrending.js"
 import "./components/trending.js"
 import "./components/gridImgs.js"
 import "./components/banner.js"
+import "./components/footer.js"
 
 import "./screens/resultScreen.js"
 import "./screens/cafeScreen.js"
