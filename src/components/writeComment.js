@@ -10,26 +10,23 @@ const styles = `
         margin: 10px auto;
         border: solid black 1px;
         text-align:center;
-        display:border-box
+        display:border-box;
+        padding:5px;
       }
 
       .input {
         width: 55vw;
-        resize: none;
-        
+        resize: none;  
       }
-
-      .title {
-        width: 55vw;
-       
+      input {
+        width: 45vw; 
         height: 2rem;
         margin-bottom: 5px;
+      
       }
 
-      input, textarea {
-        font-family: "Oswald";
-        padding-left: 5px;
-        padding-right: 5px;
+      textarea {
+        font-family: "Oswald";       
       }
 
       input::-webkit-outer-spin-button,
@@ -37,9 +34,19 @@ const styles = `
         -webkit-appearance: none;
         margin: 0;
       }
-
+      .first-line{ 
+        display:flex;
+        width:60vw;
+        align-items: center;
+        justify-content:center;
+        
+      }
       input[type=number] {
         -moz-appearance: textfield;
+        height: 2rem;
+        width:9vw;
+       
+        
       }
       textarea,button,input{
         font-family:Oswald;
@@ -48,6 +55,7 @@ const styles = `
       h2{
         text-align:center;
         color:white;
+        line-height:200%
        
       }
       p{
@@ -58,9 +66,10 @@ const styles = `
         background-color:black
       }
       button{
-        background-color:white;
+        background-color:#F5F5F5;
         border:none;
-        font-size:150%;
+        font-size:100%;
+        width:8vw
       }
       button:hover{
         background-color:#9d9d9d;
@@ -86,10 +95,13 @@ class WriteComment extends HTMLElement {
     <div class="container">
       <form id="review-form">
         <h2>Write a Review!</h2>
-       
+        
+        <div class="first-line">
         <input class="title" name="title" type="text" placeholder="Title" id="title"></input>
+        <input type="number" min="1" max="5" name="rating" id="rating" placeholder="Score"></input>
+        </div>
         <textarea rows="6" name="content" id="content" class="input" placeholder="Type your review..."></textarea>
-        <p>Rating: <input type="number" min="1" max="5" name="rating" id="rating"></input></p>
+        
         <div class="rating">
          
         </div>
