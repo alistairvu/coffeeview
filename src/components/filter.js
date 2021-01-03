@@ -10,18 +10,25 @@ const style = `
 
       }
        .container {
-       padding:0;
-       margin:0;
+       padding:0 !important;
+       
+       margin:0 !important;
        width:100vw;
+      
       }
     }
+
     #filter-card{
      margin:2vw;
      height:750px;
-      
      padding:3vw;
      background-color:#f5f5f5;
     }
+
+    .hidden {
+      display: none;
+    }
+
     .container{
       display:grid;
       margin-left:15vw;
@@ -31,9 +38,8 @@ const style = `
       color:black;
       background-color:white;
     }
-    #result-list{
 
-    }
+    
     h3,h2{
       text-transform:uppercase;
       line-height:60%;
@@ -52,16 +58,22 @@ const style = `
 class Filter extends HTMLElement {
   constructor() {
     super()
-    this._shadowDom = this.attachShadow({ mode: "open" })
+    this._shadowDom = this.attachShadow({
+      mode: "open",
+    })
   }
   connectedCallback() {
     this._shadowDom.innerHTML = `
         ${style}
+        <input type='button' id='showHide'><label for="showHide">Search</label>
         <div class="container">
         
         <form id="filter-card">
             <search-hint class="searchBar"></search-hint>
+            <h3>Tên</h3>
+            <search-hint id="search-bar"></search-hint>
             <div>
+              <i class="fa fa-user-o" aria-hidden="true"></i>
                 <h3>Địa điểm</h3>
                 <div><input type="checkbox" name="district" value="Cầu Giấy" id="Cầu Giấy"><label for="Cầu Giấy">Cầu Giấy</label></div>
                 <div><input type="checkbox" name="district" value="Hoàn Kiếm" id="Hoàn Kiếm"><label for="Hoàn Kiếm">Hoàn Kiếm</label></div>
@@ -96,7 +108,21 @@ class Filter extends HTMLElement {
         
         </div>
         `
+<<<<<<< HEAD
     const allCheckboxes = this._shadowDom.querySelectorAll( 
+=======
+    const showHide = this._shadowDom.getElementById("showHide")
+    const container = this._shadowDom.querySelector(".container")
+    const filterCard = this._shadowDom.getElementById("filter-card")
+
+    showHide.addEventListener("click", () => {
+      console.log(filterCard)
+      filterCard.classList.toggle("hidden")
+      console.log(filterCard.style)
+    })
+
+    const allCheckboxes = this._shadowDom.querySelectorAll(
+>>>>>>> 9207786e25dd3dabf9bcde4915200203fca17b46
       "input[type=checkbox]"
     )
     allCheckboxes.forEach((box) => {
@@ -143,7 +169,7 @@ class Filter extends HTMLElement {
   grabCheckboxValues() {
     let criteria = {}
     const allCheckboxes = this._shadowDom.querySelectorAll(
-      "input[type=checkbox]" 
+      "input[type=checkbox]"
     )
 
     allCheckboxes.forEach((checkbox) => {
@@ -161,7 +187,10 @@ class Filter extends HTMLElement {
   async checkCafe() {
     const res = await firebase.firestore().collection("cafes").get()
     const docs = res.docs
-    const cafe = docs.map((doc) => ({ ...doc.data(), id: doc.id }))
+    const cafe = docs.map((doc) => ({
+      ...doc.data(),
+      id: doc.id,
+    }))
     return cafe
   }
 }

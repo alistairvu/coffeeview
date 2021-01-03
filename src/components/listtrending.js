@@ -1,12 +1,11 @@
-import { getDataFromDocs, getDataFromDoc } from "../utils.js"
 const style = `
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
 
 .wrapper {
 	padding: 5px;
 	max-width: 960px;
-    width: 95%;
-    color: #666;
+  width: 95%;
+  color: #666;
 	margin: 20px auto;
 }
 
@@ -14,13 +13,13 @@ const style = `
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: center;
-    margin: 5px 0;
+  margin: 5px 0;
     
 }
 
 .column {
 	flex: 1;
-	border: 1px solid gray;
+  background-color:#f5f5f5;
 	margin: 2px;
 	padding: 10px;
 	&:first-child { margin-left: 0; }
@@ -28,8 +27,8 @@ const style = `
 	
 }
 .wrapper {
-    width: 45vw;
-    height: 150px;
+    width: 90vw;
+   
    
     display: flex;
     flex-direction: row;
@@ -38,7 +37,7 @@ const style = `
     margin: 0 auto;
     margin-top: 5vh;
     margin-bottom: 5vh;
-    background-color:#f5f5f5;
+  
     padding-bottom:20px;
     padding-top:20px;
     padding-left:20px;
@@ -76,7 +75,7 @@ class TopTrend extends HTMLElement {
          <div class="wrapper">
          <section class="columns">
             ${html}
-            </section>
+          </section>
          </div>
         `
   }

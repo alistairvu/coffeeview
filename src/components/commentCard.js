@@ -6,10 +6,10 @@ const styles = `
       }
 
       .container {
-        width: 60vw;
-        border: 1px solid black;
-        margin: 10px auto;
-        padding: 5px;
+        width: 55vw;
+       background-color:#F5F5F5;
+        margin: 2vh auto;
+        padding: 2vw;
       }
 
       @media (max-width: 729px) {
@@ -23,6 +23,7 @@ const styles = `
         font-size: 0.7rem;
         cursor: pointer;
       }
+      
     </style>`
 
 class Comment extends HTMLElement {
@@ -40,23 +41,31 @@ class Comment extends HTMLElement {
 
     this._shadowRoot.innerHTML = `
     ${styles}
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+  />
     <div class="container">
-      <h3>${title}</h3>
-      <p class="small-info">
-        Rating: ${rating.toFixed(1)} / 5.0 • by ${author}
+    <p class="small-info">
+    ${
+      localStorage.getItem("user")
+        ? JSON.parse(localStorage.getItem("user")).username === author
+          ? `<p class="delete" id="delete" style="float:right;width:5vw;text-align:center;background-color:#ebe8e8">Delete</p>`
+          : ""
+        : ""
+    }
+    <i class="fa fa-user-o" aria-hidden="true"></i> <small>${author}</small>
+    
       </p>
+      <h3>${title} (${rating.toFixed(1)}<small>/5.0</small>)</h3> 
+     
       <p>
         ${content}
       </p>
-      ${
-        localStorage.getItem("user")
-          ? JSON.parse(localStorage.getItem("user")).username === author
-            ? `<p class="delete" id="delete">Delete</p>`
-            : ""
-          : ""
-      }
       
-    </div>`
+      
+    </div>
+    `
 
     this._shadowRoot
       .getElementById("delete")

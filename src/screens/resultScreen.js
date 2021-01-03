@@ -30,7 +30,9 @@ class ResultScreen extends HTMLElement {
     <header-cafe></header-cafe>
     <div class="results">
       <filter-screen></filter-screen>
-    </div>`
+    </div>
+    <footer-cafe></footer-cafe>
+    `
   }
 }
 

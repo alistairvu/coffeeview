@@ -53,7 +53,9 @@ const style = `
 .username {
   color: white;
 }
-
+a{
+  text-decoration:none
+}
 a:active, a:focus {
   outline: none;
 }
@@ -86,15 +88,15 @@ class StoryHeader extends HTMLElement {
             ${
               window.localStorage.getItem("isLoggedIn") === "true"
                 ? `<div class="user-info">
-                <p class="username">Hello, ${
+                <p class="username">Xin chào, ${
                   JSON.parse(window.localStorage.getItem("user")).username ||
                   "user"
                 }!</p>
-                <button class="btn btnLogOut" id="btnLogOut">Log Out</button>
+                <button class="btn btnLogOut" id="btnLogOut">Đăng xuất</button>
             </div>`
                 : `<div class="user-info">
               <a href="#!/login">
-                <button class="btn btnLogIn" id="btnLogIn">Log In</button>
+                <button class="btn btnLogIn" id="btnLogIn">Đăng nhập</button>
               </a>
             </div>`
             }

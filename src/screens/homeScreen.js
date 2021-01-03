@@ -30,6 +30,7 @@ class HomeScreen extends HTMLElement {
         <top-trend></top-trend>
         
         </div>
+        <footer-cafe></footer-cafe>
         `
   }
 }

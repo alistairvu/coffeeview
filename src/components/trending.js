@@ -7,12 +7,14 @@ h4 {
 }
 .image{
     display: block;
-    height: 150px;
+    max-height: 150px;
     width: auto;
+    
 }
 
 img{
     width:100%;
+    max-height: 150px;
 }
 
 a{

@@ -57,6 +57,29 @@ a{
 a:hover {
   color: #3c3a3b;
 }
+@media (max-width: 729px) {
+        
+  .container{
+    display:grid;
+    height:100%;
+    width:100%;
+    grid-template-areas:
+    'nav'
+    'nav'
+
+  }
+  img {
+    grid-row: 1 / span 2;
+    display:block
+  }
+  .info {
+    grid-row: 3 / span 2;
+  }
+  
+  
+  
+
+}
 
 </style>
 `
@@ -91,7 +114,7 @@ class ResultCard extends HTMLElement {
         <div class="rating">${
           reviews > 0
             ? `<b>${rating.toFixed(1)}/5.0</b> (${reviews})`
-            : `<span>No reviews yet</span>`
+            : `<span>Chưa có đánh giá</span>`
         } • ${fromNumberToDollar(price)}</div> 
         <div class="address">
           ${address}
