@@ -93,7 +93,7 @@ class Filter extends HTMLElement {
         
         </div>
         `
-    const allCheckboxes = this._shadowDom.querySelectorAll(
+    const allCheckboxes = this._shadowDom.querySelectorAll( 
       "input[type=checkbox]"
     )
     allCheckboxes.forEach((box) => {

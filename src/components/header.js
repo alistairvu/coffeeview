@@ -44,6 +44,7 @@ const style = `
     padding: 2px;
     margin-left: 10px;
     font-family: "Oswald";
+    border-radius: 10px;
 }
 .avatar{
     cursor: pointer;

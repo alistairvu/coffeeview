@@ -14,7 +14,7 @@ class SearchHint extends HTMLElement {
                 <div class='searchBar'>
                   <input type="text" id="myInput" placeholder="Search for names.." list="ProductsList" title="Type in a name">
                   <input type="submit" id="submit-btn">
-                  <datalist id="ProductsList">
+                  <datalist id="ProductsList" id-list="">
     
                   </datalist>
                 </div>
@@ -52,6 +52,7 @@ class SearchHint extends HTMLElement {
         .get();
 
       const id = result.docs[0].id
+
       const searchBtn = this._shadowDom.getElementById("submit-btn")
       searchBtn.addEventListener("click", (e) => {
         e.preventDefault()

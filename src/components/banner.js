@@ -15,6 +15,10 @@ const styles = `
 }
 
 .content {
+  border: 1px black solid;
+  border-radius: 20px;
+  background-color:grey;
+  opacity: 0.5; 
   margin: 0;
   position: absolute;
   top: 50%;
@@ -36,6 +40,7 @@ h1 {
   font-size: 200%;
   background-color: #f5f5f5;
   border: none;
+  border-radius: 30px;
 }
 
 .explore-btn:hover {
@@ -59,6 +64,7 @@ class Banner extends HTMLElement {
     <div class="container">
       <div class="content">
         <h1>Find your next favourite café</h1>
+
         <button class="explore-btn"><b>EXPLORE</b></button>
       </div>
     </div>`
