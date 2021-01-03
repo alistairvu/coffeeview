@@ -58,8 +58,8 @@ class Banner extends HTMLElement {
     ${styles}
     <div class="container">
       <div class="content">
-        <h1>Find your next favourite café</h1>
-        <button class="explore-btn"><b>EXPLORE</b></button>
+        <h1>Tìm quán cafe trong mơ của bạn</h1>
+        <button class="explore-btn"><b>KHÁM PHÁ</b></button>
       </div>
     </div>`
 

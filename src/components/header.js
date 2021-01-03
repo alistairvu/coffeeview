@@ -85,7 +85,7 @@ class StoryHeader extends HTMLElement {
             ${
               window.localStorage.getItem("isLoggedIn") === "true"
                 ? `<div class="user-info">
-                <p class="username">Hello, ${
+                <p class="username">Xin chào, ${
                   JSON.parse(window.localStorage.getItem("user")).username ||
                   "user"
                 }!</p>
