@@ -4,8 +4,8 @@ const style = `
 .wrapper {
 	padding: 5px;
 	max-width: 960px;
-    width: 95%;
-    color: #666;
+  width: 95%;
+  color: #666;
 	margin: 20px auto;
 }
 
@@ -13,7 +13,7 @@ const style = `
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: center;
-    margin: 5px 0;
+  margin: 5px 0;
     
 }
 
@@ -26,23 +26,7 @@ const style = `
 	&:last-child { margin-right: 0; }
 	
 }
-.wrapper {
-    width: 45vw;
-    height: 150px;
-   
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto;
-    margin-top: 5vh;
-    margin-bottom: 5vh;
-    background-color:#f5f5f5;
-    padding-bottom:20px;
-    padding-top:20px;
-    padding-left:20px;
-  
-  }
+
   .wrapper:hover{
     background-color:#ebebeb;
   }
@@ -75,7 +59,7 @@ class TopTrend extends HTMLElement {
          <div class="wrapper">
          <section class="columns">
             ${html}
-            </section>
+          </section>
          </div>
         `
   }
