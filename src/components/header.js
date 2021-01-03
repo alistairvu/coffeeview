@@ -52,7 +52,9 @@ const style = `
 .username {
   color: white;
 }
-
+a{
+  text-decoration:none
+}
 a:active, a:focus {
   outline: none;
 }

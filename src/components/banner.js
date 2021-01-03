@@ -12,7 +12,8 @@ const styles = `
   text-align: center;
   background-image: url("https://firebasestorage.googleapis.com/v0/b/hanoi-coffee.appspot.com/o/anh-nguyen-HycIct9V-DM-unsplash.jpg?alt=media&token=6b885c13-e953-4603-a0ca-0d7e5080d897");
   background-size: cover;
-  opacity: 0.7;
+  
+  z-index: 1;
 }
 
 .content {
@@ -27,6 +28,8 @@ h1 {
   text-transform: uppercase;
   color: black;
   font-size:500%;
+  z-index: 2;
+  opacity:1 !important
 }
 
 .explore-btn {
