@@ -7,9 +7,11 @@ const style = `
 
       }
        .container {
-       padding:0;
-       margin:0;
+       padding:0 !important;
+       
+       margin:0 !important;
        width:100vw;
+      
       }
     }
     #filter-card{
@@ -49,11 +51,14 @@ const style = `
 class Filter extends HTMLElement {
   constructor() {
     super()
-    this._shadowDom = this.attachShadow({ mode: "open" })
+    this._shadowDom = this.attachShadow({
+      mode: "open"
+    })
   }
   connectedCallback() {
     this._shadowDom.innerHTML = `
         ${style}
+        <input type='button' id='showHide'><label for="showHide">Search</label>
         <div class="container">
         
         <form id="filter-card">
@@ -95,6 +100,16 @@ class Filter extends HTMLElement {
         
         </div>
         `
+    const showHide = this._shadowDom.getElementById('showHide')
+    const container = this._shadowDom.querySelector('.container')
+    const filterCard = this._shadowDom.getElementById("filter-card")
+
+    showHide.addEventListener('click', () => {
+      console.log(filterCard)
+      filterCard.style.display = 'none'
+
+
+    })
     const allCheckboxes = this._shadowDom.querySelectorAll(
       "input[type=checkbox]"
     )
@@ -147,9 +162,9 @@ class Filter extends HTMLElement {
 
     allCheckboxes.forEach((checkbox) => {
       if (checkbox.checked) {
-        criteria[checkbox.name] = criteria[checkbox.name]
-          ? criteria[checkbox.name]
-          : []
+        criteria[checkbox.name] = criteria[checkbox.name] ?
+          criteria[checkbox.name] :
+          []
         criteria[checkbox.name].push(checkbox.value)
       }
     })
@@ -160,7 +175,10 @@ class Filter extends HTMLElement {
   async checkCafe() {
     const res = await firebase.firestore().collection("cafes").get()
     const docs = res.docs
-    const cafe = docs.map((doc) => ({ ...doc.data(), id: doc.id }))
+    const cafe = docs.map((doc) => ({
+      ...doc.data(),
+      id: doc.id
+    }))
     return cafe
   }
 }
