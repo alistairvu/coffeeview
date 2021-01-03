@@ -28,6 +28,9 @@ router
     "/sign-up": function () {
       rootElement.innerHTML = `<sign-up-screen></sign-up-screen>`
     },
+    "/about-us": function (){
+      rootElement.innerHTML = `<about-screen></about-screen>`
+    },
   })
   .resolve()
 

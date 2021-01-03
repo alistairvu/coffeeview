@@ -14,13 +14,18 @@ const style = `
       
       }
     }
+
     #filter-card{
      margin:2vw;
      height:750px;
-      
      padding:3vw;
      background-color:#f5f5f5;
     }
+
+    .hidden {
+      display: none;
+    }
+
     .container{
       display:grid;
       margin-left:15vw;
@@ -30,9 +35,8 @@ const style = `
       color:black;
       background-color:white;
     }
-    #result-list{
 
-    }
+    
     h3,h2{
       text-transform:uppercase;
       line-height:60%;
@@ -52,7 +56,7 @@ class Filter extends HTMLElement {
   constructor() {
     super()
     this._shadowDom = this.attachShadow({
-      mode: "open"
+      mode: "open",
     })
   }
   connectedCallback() {
@@ -100,16 +104,16 @@ class Filter extends HTMLElement {
         
         </div>
         `
-    const showHide = this._shadowDom.getElementById('showHide')
-    const container = this._shadowDom.querySelector('.container')
+    const showHide = this._shadowDom.getElementById("showHide")
+    const container = this._shadowDom.querySelector(".container")
     const filterCard = this._shadowDom.getElementById("filter-card")
 
-    showHide.addEventListener('click', () => {
+    showHide.addEventListener("click", () => {
       console.log(filterCard)
-      filterCard.style.display = 'none'
-
-
+      filterCard.classList.toggle("hidden")
+      console.log(filterCard.style)
     })
+
     const allCheckboxes = this._shadowDom.querySelectorAll(
       "input[type=checkbox]"
     )
@@ -162,9 +166,9 @@ class Filter extends HTMLElement {
 
     allCheckboxes.forEach((checkbox) => {
       if (checkbox.checked) {
-        criteria[checkbox.name] = criteria[checkbox.name] ?
-          criteria[checkbox.name] :
-          []
+        criteria[checkbox.name] = criteria[checkbox.name]
+          ? criteria[checkbox.name]
+          : []
         criteria[checkbox.name].push(checkbox.value)
       }
     })
@@ -177,7 +181,7 @@ class Filter extends HTMLElement {
     const docs = res.docs
     const cafe = docs.map((doc) => ({
       ...doc.data(),
-      id: doc.id
+      id: doc.id,
     }))
     return cafe
   }

@@ -72,7 +72,7 @@ class FooterCafe extends HTMLElement {
         <div>
             <ul>
               <li><a href="https://www.facebook.com/Coffeeview-107183727985156">Facebook</a></li>
-              <li><a href=>About us</a></li>
+              <li><a href="#!/about-us">About us</a></li>
               <li><a href="nhathoangn06@gmail.com">Email</a></li>
               <li><a href="https://github.com/alistairvu/coffeeview">Github</a></li>
               <li><a href="#!/create">Admin page</a></li>
