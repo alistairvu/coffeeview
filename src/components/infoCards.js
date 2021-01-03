@@ -119,27 +119,27 @@ class InfoCards extends HTMLElement {
               ? `<b>No reviews yet.</b>
             <p><em>Be the first to add a review!</em></p>`
               : `<h1>${rating.toFixed(1)}/5.0</h1>
-          <p><em>${reviews} ${reviews == 1 ? "review" : "reviews"}</em></p>`
+          <p><em>${reviews} đánh giá</em></p>`
           }
         </div>
         <div class="details-card card">
-          <h2>Details</h2>
+          <h2>Chi tiết</h2>
           <div class="address-card card-section">
-            <b>ADDRESS</b>
+            <b>ĐỊA CHỈ</b>
             <p>
               ${address}
             </p>
           </div>
           <div class="phone-card card-section">
-            <b>PHONE NUMBER</b>
+            <b>SỐ ĐIỆN THOẠI</b>
             <p>${phone}</p>
           </div>
           <div class="hours-card card-section">
-            <b>HOURS</b>
+            <b>GIỜ MỞ CỬA</b>
             <p>${hours}</p>
           </div>
           <div class="feature-card card-section">
-            <b>FEATURES</b>
+            <b>ĐIỂM ĐẶC BIỆT</b>
             <p>${features}</p>
           </div>
         </div>
