@@ -1,4 +1,4 @@
-const style=`
+const style = `
 <style>
 h2{
   text-align:center
@@ -25,8 +25,8 @@ class CommentList extends HTMLElement {
       .sort((a, b) => Date.parse(b.time) - Date.parse(a.time))
       .map((doc) => doc.id)
 
-    let html = `${style}<br><h2>Customer Reviews</h2>`
-    
+    let html = `${style}<br><h2>Đánh giá của Khách hàng</h2>`
+
     data.map(
       (key) =>
         (html += `<comment-card store="${store}" key="${key}"></comment-card>`)

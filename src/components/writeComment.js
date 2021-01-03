@@ -94,18 +94,18 @@ class WriteComment extends HTMLElement {
     ${styles}
     <div class="container">
       <form id="review-form">
-        <h2>Write a Review!</h2>
+        <h2>Bạn nghĩ gì về quán này?</h2>
         
         <div class="first-line">
-        <input class="title" name="title" type="text" placeholder="Title" id="title"></input>
-        <input type="number" min="1" max="5" name="rating" id="rating" placeholder="Score"></input>
+        <input class="title" name="title" type="text" placeholder="Tiêu đề" id="title"></input>
+        <input type="number" min="1" max="5" name="rating" id="rating" placeholder="Điểm số"></input>
         </div>
-        <textarea rows="6" name="content" id="content" class="input" placeholder="Type your review..."></textarea>
+        <textarea rows="6" name="content" id="content" class="input" placeholder="Nhập đánh giá của bạn..."></textarea>
         
         <div class="rating">
          
         </div>
-        <button type="submit">Submit</button>
+        <button type="submit">Đăng</button>
       </form>
     </div>`
 

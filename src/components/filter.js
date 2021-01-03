@@ -61,8 +61,9 @@ class Filter extends HTMLElement {
         <input type='button' id='showHide'><label for="showHide">Search</label>
         <div class="container">
         
-        <form class="filter" id="filter-card" style="display: block;">
-            <search-hint></search-hint>
+        <form id="filter-card">
+            <h3>Tên</h3>
+            <search-hint id="search-bar"></search-hint>
             <div>
               <i class="fa fa-user-o" aria-hidden="true"></i>
                 <h3>Địa điểm</h3>

@@ -12,6 +12,7 @@ const styles = `
   text-align: center;
   background-image: url("https://firebasestorage.googleapis.com/v0/b/hanoi-coffee.appspot.com/o/anh-nguyen-HycIct9V-DM-unsplash.jpg?alt=media&token=6b885c13-e953-4603-a0ca-0d7e5080d897");
   background-size: cover;
+  opacity: 0.7;
 }
 
 .content {
@@ -25,7 +26,7 @@ const styles = `
 h1 {
   text-transform: uppercase;
   color: black;
-  font-size:400%;
+  font-size:500%;
 }
 
 .explore-btn {
@@ -58,9 +59,9 @@ class Banner extends HTMLElement {
     ${styles}
     <div class="container">
       <div class="content">
-        <h1>Find your next favourite café</h1>
-        <button class="explore-btn"><b>EXPLORE</b></button>
-      </div>
+        <h1>Tìm quán cafe <br /> trong mơ của bạn</h1>
+        <button class="explore-btn"><b>KHÁM PHÁ</b></button> 
+    </div>
     </div>`
 
     this._shadowRoot
