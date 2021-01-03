@@ -1,5 +1,21 @@
 import { getDataFromDocs, getDataFromDoc } from "../utils.js";
 const style = `
+  .searchBar{
+    
+  }
+  input{
+    height:30px;
+  }
+  
+  #submit-btn{
+    border-radius:2em;
+    
+    
+  }
+  img{
+    max-height: 30px;
+    max-width: 30px;
+  }
 `;
 class SearchHint extends HTMLElement {
   constructor() {
@@ -13,7 +29,8 @@ class SearchHint extends HTMLElement {
             </style>
                 <div class='searchBar'>
                   <input type="text" id="myInput" placeholder="Search for names.." list="ProductsList" title="Type in a name">
-                  <input type="submit" id="submit-btn">
+                  
+                  <button id= "submit-btn"> <img src="https://www.flaticon.com/svg/static/icons/svg/2089/2089805.svg" alt="icon search"></button>
                   <datalist id="ProductsList" id-list="">
     
                   </datalist>
