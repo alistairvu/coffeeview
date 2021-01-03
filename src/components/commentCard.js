@@ -46,11 +46,6 @@ class Comment extends HTMLElement {
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
   />
     <div class="container">
-<<<<<<< Updated upstream
-      <h3>${title}</h3>
-      <p class="small-info">
-        Rating: ${rating.toFixed(1)} / 5.0 • by ${author}
-=======
     <p class="small-info">
     ${
       localStorage.getItem("user")
@@ -61,7 +56,6 @@ class Comment extends HTMLElement {
     }
     <i class="fa fa-user-o" aria-hidden="true"></i> <small>${author}</small>
     
->>>>>>> Stashed changes
       </p>
       <h3>${title} (${rating.toFixed(1)}<small>/5.0</small>)</h3> 
      
