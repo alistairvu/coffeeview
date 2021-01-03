@@ -1,4 +1,4 @@
- const style =`<style>
+const style = `<style>
  ul {
      display: inline-grid;
      grid-auto-flow: row;
@@ -61,12 +61,12 @@
  }
 </style>`
 class FooterCafe extends HTMLElement {
-    constructor() {
-        super()
-        this._shadowDom = this.attachShadow({ mode: "open" })
-      }
-      connectedCallback() {
-          this._shadowDom.innerHTML= `
+  constructor() {
+    super()
+    this._shadowDom = this.attachShadow({ mode: "open" })
+  }
+  connectedCallback() {
+    this._shadowDom.innerHTML = `
           ${style}
           <footer>
         <div>
@@ -74,8 +74,8 @@ class FooterCafe extends HTMLElement {
               <li><a href="https://www.facebook.com/Coffeeview-107183727985156">Facebook</a></li>
               <li><a href=>About us</a></li>
               <li><a href="nhathoangn06@gmail.com">Email</a></li>
-              <li><a href="https://github.com/alistairvu/coffeeview.git/">Github</a></li>
-              <li><a href=>Admin page</a></li>
+              <li><a href="https://github.com/alistairvu/coffeeview">Github</a></li>
+              <li><a href="#!/create">Admin page</a></li>
               <li>
                 <p>👋</p>
               </li>
@@ -83,6 +83,6 @@ class FooterCafe extends HTMLElement {
           </div>
     </footer>
           `
-      }
+  }
 }
-window.customElements.define("footer-cafe", FooterCafe);
+window.customElements.define("footer-cafe", FooterCafe)

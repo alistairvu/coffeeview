@@ -57,7 +57,8 @@ class Filter extends HTMLElement {
         <div class="container">
         
         <form id="filter-card">
-            <search-hint></search-hint>
+            <h3>Tên</h3>
+            <search-hint id="search-bar"></search-hint>
             <div>
               <i class="fa fa-user-o" aria-hidden="true"></i>
                 <h3>Địa điểm</h3>
@@ -141,7 +142,7 @@ class Filter extends HTMLElement {
   grabCheckboxValues() {
     let criteria = {}
     const allCheckboxes = this._shadowDom.querySelectorAll(
-      "input[type=checkbox]" 
+      "input[type=checkbox]"
     )
 
     allCheckboxes.forEach((checkbox) => {
