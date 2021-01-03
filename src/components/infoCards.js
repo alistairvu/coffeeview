@@ -113,7 +113,7 @@ class InfoCards extends HTMLElement {
     <div class="container">
       <div class="cards">
         <div class="rating-card card">
-          <h2>Ratings and reviews</h2>
+          <h2>Đánh giá</h2>
           ${
             reviews <= 0
               ? `<b>No reviews yet.</b>
