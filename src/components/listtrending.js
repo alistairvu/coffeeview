@@ -19,14 +19,30 @@ const style = `
 
 .column {
 	flex: 1;
-	border: 1px solid gray;
+  background-color:#f5f5f5;
 	margin: 2px;
 	padding: 10px;
 	&:first-child { margin-left: 0; }
 	&:last-child { margin-right: 0; }
 	
 }
-
+.wrapper {
+    width: 90vw;
+   
+   
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+  
+    padding-bottom:20px;
+    padding-top:20px;
+    padding-left:20px;
+  
+  }
   .wrapper:hover{
     background-color:#ebebeb;
   }
