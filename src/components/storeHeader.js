@@ -70,14 +70,16 @@ class Header extends HTMLElement {
     <div class="container">
     <br>
       <a href="#!/cafe" class="back-arrow">
-        <h3>← Return to results</h3>
+        <h3>← Tiếp tục khám phá</h3>
       </a>
       <br>
       <h1>${name}</h1>
       
       <div class="data">
         <h3>${
-          reviews <= 0 ? "No reviews yet" : `Rating: ${rating.toFixed(1)}/5.0`
+          reviews <= 0
+            ? "Chưa có đánh giá"
+            : `Đánh giá: ${rating.toFixed(1)}/5.0`
         } · ${fromNumberToDollar(price)}</h3>
         <h3>${address}</h3>
       </div>
