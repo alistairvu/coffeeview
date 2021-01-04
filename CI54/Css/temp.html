@@ -7,14 +7,108 @@
     <title>Document</title>
     <link rel="stylesheet" href="./style.css">
     <style>
-        img {
-            display: block;
-            max-width: 254px;
-            max-height: 254px;
-            width: auto;
-            height: auto;
+        input,
+        select {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type=submit] {
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type=submit]:hover {
+            background-color: #45a049;
+        }
+
+        div {
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            padding: 20px;
         }
     </style>
+    input[type=text],
+    select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    }
+
+    input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    }
+
+    input[type=submit]:hover {
+    background-color: #45a049;
+    }
+
+    div {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    }
+
+    [file-drop] {
+    position: relative;
+    border: 1px solid transparent;
+    }
+
+    .solid-border:after {
+    border: 1px dashed #aaa;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    content: 'Drop Files Here!';
+    text-align: center;
+    line-height: 100%;
+    }
+
+    .img-preview>div,
+    [file-drop-preview] div {
+    display: inline-block;
+    position: relative;
+    }
+
+    .img-preview img,
+    [file-drop-preview] img {
+    max-width: 100px;
+    max-height: 100px;
+    width: auto;
+    height: auto;
+    }
+
+    .img-preview>div,
+    [file-drop-preview]>div {
+    margin: 0.25em;
+    }
+    </style>
+
 </head>
 
 <body>
@@ -22,50 +116,75 @@
     <div class="form">
 
         name: <input type="text" name="name" id="name">
+        <br>
+
         address <input type="text" name="" id="address">
+        <br>
         district: <input type="text" name="" id="district">
-        link arnh<input type="text" name="" id="img">
+        <br>
         gio mo cua <input type="text" name="" id="hours">
+        <br>
         phone<input type="text" name="" id="phone">
-
+        <br>
         review <input type="text" name="" id="review">
+        <br>
         reviews <input type="number" name="reviews" id="reviews">
+        <br>
         price<input type="number" name="reviews" id="price">
+        <br>
         rating<input type="number" name="reviews" id="rating">
-        <button id="btn">zzzzz</button>
+        <br>
+        <h4>Fearture/trang bị</h4>
+        <input type="radio" name="park" id="park"> Chỗ để xe
+        <br>
+        <input type="radio" name="floor" id="floor"> Không gian hai tầng
+        <br>
+        <input type="radio" name="outdoor" id="outdoor"> Ban công ngoài tròi
+        <br>
+        <input type="radio" name="workingspace" id="workingspace"> Khong gian làm viec
+        <br>
+        <h4>Decor/phong cách trang trí</h4>
+        <input type="radio" name="Vitage" id="vintage"> Vintage
+        <br>
+        <input type="radio" name="moderm" id="moderm"> Moderm
+        <br>
+        <!-- upload multuple file to firebase -->
+       
+            <button id="btn">zzzzz</button>
 
 
 
 
-    </div>
 
-    <!-- -------------------------------------- -->
-    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-firestore.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-storage.js"></script>
+        </div>
 
-    <!-- TODO: Add SDKs for Firebase products that you want to use
+        <!-- -------------------------------------- -->
+        <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-storage.js"></script>
+
+        <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
-    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-analytics.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-analytics.js"></script>
 
-    <script>
-        // Your web app's Firebase configuration
-        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-        var firebaseConfig = {
-            apiKey: "AIzaSyDGDCKdC5qOLhs5UanIxxwbjRPKDQbddyo",
-            authDomain: "hanoi-coffee.firebaseapp.com",
-            projectId: "hanoi-coffee",
-            storageBucket: "hanoi-coffee.appspot.com",
-            messagingSenderId: "613063048085",
-            appId: "1:613063048085:web:a3e55bc491aea9f37e549c",
-            measurementId: "G-SC7L29NCSM"
-        };
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
-        firebase.analytics();
-    </script>
-    <script src="./temp.js"></script>
-    <!-- <script src="./Js/index.js" type="module"></script> -->
+        <script>
+            // Your web app's Firebase configuration
+            // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+            var firebaseConfig = {
+                apiKey: "AIzaSyDGDCKdC5qOLhs5UanIxxwbjRPKDQbddyo",
+                authDomain: "hanoi-coffee.firebaseapp.com",
+                projectId: "hanoi-coffee",
+                storageBucket: "hanoi-coffee.appspot.com",
+                messagingSenderId: "613063048085",
+                appId: "1:613063048085:web:a3e55bc491aea9f37e549c",
+                measurementId: "G-SC7L29NCSM"
+            };
+            // Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
+            firebase.analytics();
+        </script>
+        <script src="./temp.js"></script>
+        <!-- <script src="./Js/index.js" type="module"></script> -->
 
 </body>
 

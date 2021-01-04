@@ -1,3 +1,24 @@
+const style= `
+
+h4 {
+    margin-top:0;
+    margin-bottom:0;
+    font-family: 'Oswald', sans-serif;
+}
+.image{
+    display: block;
+    max-width: 254px;
+    max-height: 254px;
+    width: auto;
+    height: auto;
+}
+img{
+    width:100%;
+}
+
+`
+
+
 class Trending extends HTMLElement {
     constructor(){
         super();
@@ -15,27 +36,19 @@ class Trending extends HTMLElement {
             money= money + "$";
         }
         this._shadowRoot.innerHTML= `
+
         <style>${style}</style>
-        <div class="item-trend">
-        <div class="image">
-            <img src="${this.img}" alt="ảnh">
-            <div class="name"><h4>${this.name}</h4></div>
-            <div class="location">${this.dis} </div>
-            <div class="rank">${this.ranking} đánh giá</div>
-            <div class="money">${money}</div>
+        <div class="item-trend"> 
+            <div class='image'><img class='img' src="${this.img}" alt="ảnh"></div>
+            <div class='content'>
+                <h4>${this.name}</h4>
+                <div class="location">${this.dis} </div>
+                <div class="rank">${this.ranking} đánh giá</div>
+                <div class="money">${money}</div>
+            </div> 
         </div>
-    </div>
 
         `
     }
 }
 window.customElements.define('item-trend', Trending)
-const style= `
-img {
-    display: block;
-    max-width: 254px;
-    max-height: 254px;
-    width: auto;
-    height: auto;
-}
-`
