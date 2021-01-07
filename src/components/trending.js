@@ -15,6 +15,7 @@ h4 {
 img{
     width:100%;
     max-height: 150px;
+    object-fit: cover;
 }
 
 a{
