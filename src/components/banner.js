@@ -19,8 +19,7 @@ const styles = `
 .content {
   border: 1px black solid;
   border-radius: 20px;
-  background: white;
-  opacity: 0.7;
+  background: rgba(255, 255, 255, 0.7); 
   padding: 10px;
   margin: 0;
   position: absolute;
