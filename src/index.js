@@ -19,7 +19,7 @@ import "./components/gridImgs.js"
 import "./components/banner.js"
 import "./components/footer.js"
 import "./components/aboutus.js"
-
+import "./components/form.js"
 
 
 import "./screens/aboutUsScreen.js"
