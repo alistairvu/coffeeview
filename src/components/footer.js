@@ -1,9 +1,13 @@
 const style = `<style>
- ul {
+ *{
+     font-family:Oswald;
+ }
+ul {
      display: inline-grid;
      grid-auto-flow: row;
      grid-gap: 24px;
      justify-items: center;
+     align-items: center;
      margin: auto;
  }
 
@@ -14,7 +18,8 @@ const style = `<style>
  }
 
  a {
-     color: white;
+     
+    color: white;
      text-decoration: none;
      box-shadow: inset 0 -1px 0 hsla(0, 0%, 100%, 0.4);
  }
@@ -36,11 +41,11 @@ const style = `<style>
 
  div {
      display: flex;
-     height: 30vh;
+     height: 15vh;
      width: 100%;
      background-color: #000000;
      line-height: 1.3;
-     font-family: Menlo, monospace;
+    
      margin: 50 px
  }
 
