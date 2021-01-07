@@ -65,11 +65,10 @@ class Filter extends HTMLElement {
   connectedCallback() {
     this._shadowDom.innerHTML = `
         ${style}
-        <input type='button' id='showHide'><label for="showHide">Search</label>
+        
         <div class="container">
         
         <form id="filter-card">
-            <search-hint class="searchBar"></search-hint>
             <h3>Tên</h3>
             <search-hint id="search-bar"></search-hint>
             <div>
@@ -108,21 +107,17 @@ class Filter extends HTMLElement {
         
         </div>
         `
-<<<<<<< HEAD
-    const allCheckboxes = this._shadowDom.querySelectorAll( 
-=======
     const showHide = this._shadowDom.getElementById("showHide")
     const container = this._shadowDom.querySelector(".container")
     const filterCard = this._shadowDom.getElementById("filter-card")
 
-    showHide.addEventListener("click", () => {
-      console.log(filterCard)
-      filterCard.classList.toggle("hidden")
-      console.log(filterCard.style)
-    })
+    // showHide.addEventListener("click", () => {
+    //   console.log(filterCard)
+    //   filterCard.classList.toggle("hidden")
+    //   console.log(filterCard.style)
+    // })
 
     const allCheckboxes = this._shadowDom.querySelectorAll(
->>>>>>> 9207786e25dd3dabf9bcde4915200203fca17b46
       "input[type=checkbox]"
     )
     allCheckboxes.forEach((box) => {
