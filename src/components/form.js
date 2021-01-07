@@ -1,5 +1,4 @@
-
-import {  uploadFileToStore } from "../utils.js";
+import { uploadFileToStore } from "../utils.js"
 
 const style = `
 #create-post textarea {
@@ -20,118 +19,111 @@ const style = `
     padding:  10px 15px;
     border-radius: 5px;
   }
+  .container {
+    width: 60vw;
+    display: flex;
+    justify-content: center;
+  }
+
+  @media (max-width: 729px) {
+    .container {
+      width: 100%;
+    }
+  }
 `
 
 class CreatePot extends HTMLElement {
-    constructor() {
-        super();
-        this._shadowRoot = this.attachShadow({ mode: 'open' })
-    }
-    connectedCallback() {
-        this._shadowRoot.innerHTML = `
+  constructor() {
+    super()
+    this._shadowRoot = this.attachShadow({ mode: "open" })
+  }
+  connectedCallback() {
+    this._shadowRoot.innerHTML = `
         <style>${style}</style>
+        <div class="container" style="text-align: center;">
             <form action="" id="create-post">
-            name <input type="text" name="" id="name">
+            Tên quán: <input type="text" name="" id="name">
             <br>
-            address <input type="text" name="" id="address">
+            Địa chỉ: <input type="text" name="" id="address">
             <br>
-            district: <input type="text" name="" id="district">
+            Quận: <input type="text" name="" id="district">
             <br>
-            gio mo cua <input type="text" name="" id="hours">
+            Giờ mở cửa: <input type="text" name="" id="hours">
             <br>
-            phone<input type="text" name="" id="phone">
+            Số điện thoại:<input type="text" name="" id="phone">
             <br>
-            review <input type="text" name="" id="review">
+            <h4>Feature/trang bị</h4>
+            <input type="radio" name="park" id="park"> Chỗ để xe
             <br>
-            reviews <input type="number" name="reviews" id="reviews">
+            <input type="radio" name="floor" id="floor"> Không gian hai tầng
             <br>
-            price<input type="number" name="reviews" id="price">
+            <input type="radio" name="outdoor" id="outdoor"> Ban công ngoài tròi
             <br>
-            rating<input type="number" name="reviews" id="rating">
+            <input type="radio" name="workingspace" id="workingspace"> Không gian làm việc
             <br>
-            <h4>Fearture/trang bị</h4>
-            <input type="radio" name="park" id="park" class="style> Chỗ để xe
-            <br>
-            <input type="radio" name="floor" id="floor" class="style> Không gian hai tầng
-            <br>
-            <input type="radio" name="outdoor" id="outdoor" class="style> Ban công ngoài tròi
-            <br>
-            <input type="radio" name="workingspace" id="workingspace" class="style> Khong gian làm viec
-            <br>
-            <h4>Decor/phong cách trang trí</h4>
+            <h4>Phong cách trang trí</h4>
             <input type="radio" name="style" id="vintage"> Vintage
             <br>
-            <input type="radio" name="style" id="moderm"> Moderm
+            <input type="radio" name="style" id="moderm"> Modern
             <br>
             <input type="file" name="file" id="file">
             <input type="file" name="file" id="file">
             <input type="file" name="file" id="file">
            <button class="post-btn">Post</button>
            </form>
+          </div>
+          
         `
 
+    const postForm = this._shadowRoot.querySelector("#create-post")
 
-        const postForm = this._shadowRoot.querySelector('#create-post');
-        const postContentInput = this._shadowRoot.querySelector('#content');
+    let name = this._shadowRoot.getElementById("name")
+    let address = this._shadowRoot.getElementById("address")
+    let district = this._shadowRoot.getElementById("district")
+    let hours = this._shadowRoot.getElementById("hours")
+    let fearture = this._shadowRoot.querySelectorAll(".style")
+    let style1 = this._shadowRoot.querySelectorAll("#vintage")
+    let style2 = this._shadowRoot.querySelectorAll("#modern")
+    let phone = this._shadowRoot.getElementById("phone")
+    let price = this._shadowRoot.getElementById("price")
+    let rating = this._shadowRoot.getElementById("price")
+    let review = this._shadowRoot.getElementById("review")
+    let reviews = this._shadowRoot.getElementById("reviews")
 
-        let namess = this._shadowRoot.getElementById("name");
-        let address = this._shadowRoot.getElementById("address")
-        let district = this._shadowRoot.getElementById("district")
-        let hours = this._shadowRoot.getElementById("hours");
-        let fearture= this._shadowRoot.querySelectorAll(".style");
-        let style1= this._shadowRoot.querySelectorAll("#vintage")
-        let style2= this._shadowRoot.querySelectorAll("#modern")
-        let phone = this._shadowRoot.getElementById("phone");
-        let price = this._shadowRoot.getElementById("price");
-        let rating = this._shadowRoot.getElementById("price");
-        let review = this._shadowRoot.getElementById("review");
-        let reviews = this._shadowRoot.getElementById("reviews");
+    let stylecafe
+    if (style1.checked) stylecafe = "vintage"
+    if (style1.checked) stylecafe = "modern"
+    postForm.addEventListener("submit", async (e) => {
+      e.preventDefault()
 
-        let stylecafe
-        if(style1.checked) stylecafe= "vintage"
-        if(style1.checked) stylecafe= "modern"
-        postForm.addEventListener('submit', async(e) => {
-            e.preventDefault();
-           
-           
-            //const currentUser = getItemLocalStorage('currentUser');
-            let cafe = {
-                address: address.value,
-                district: district.value,
-                hours: hours.value,
-                style: stylecafe,
-                phone: phone.value,
-                price: price.value,
-                rating: rating.value,
-                review: review.value,
-                reviews: reviews.value,
-                name: namess.value
-            }
-            const respon= await firebase.firestore().collection('cafes').add(cafe);
-            let img= postForm.file.files;
-            if(img.length > 0)
-
-            {
-                const image= img;
-                console.log(image);
-                let url = await uploadFileToStore(image);
-                this.updateListFile(url, respon.id);
-            }
-          
-          
-
-
-        })
-       
+      //const currentUser = getItemLocalStorage('currentUser');
+      let cafe = {
+        address: address.value,
+        district: district.value,
+        hours: hours.value,
+        style: stylecafe,
+        phone: phone.value,
+        price: price.value,
+        rating: 0,
+        review: 0,
+        reviews: 0,
+        name: name.value,
+      }
+      const respon = await firebase.firestore().collection("cafes").add(cafe)
+      let img = postForm.file.files
+      if (img.length > 0) {
+        const image = img
+        console.log(image)
+        let url = await uploadFileToStore(image)
+        this.updateListFile(url, respon.id)
+      }
+    })
+  }
+  updateListFile(url, res) {
+    const dateUpdate = {
+      file: firebase.firestore.FieldValue.arrayUnion(url),
     }
-    updateListFile(url, res)
-    {
-        const dateUpdate= {
-            file: firebase.firestore.FieldValue.arrayUnion(url)
-
-        }
-        firebase.firestore().collection('posts').doc(res).update(dateUpdate);
-    }
-
+    firebase.firestore().collection("posts").doc(res).update(dateUpdate)
+  }
 }
-window.customElements.define('form-cafe', CreatePot);
+window.customElements.define("form-cafe", CreatePot)

@@ -34,6 +34,7 @@ const styles = `
 img {
   width: 200px;
   max-height: 150px; 
+  object-fit: cover
 }
 
 .info {
