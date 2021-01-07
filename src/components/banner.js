@@ -4,7 +4,11 @@ const styles = `
   margin: 0;
   padding: 0;
 }
-
+@media (max-width: 729px) {
+  h1 {
+    font-size:200%;
+  }
+}
 .container {
   width: 100%;
   height: calc(100vh - 64px);
@@ -17,9 +21,9 @@ const styles = `
 }
 
 .content {
-  border: 1px black solid;
+ 
   border-radius: 20px;
-  background: rgba(255, 255, 255, 0.7); 
+  background: rgba(255, 255, 255, 0.5); 
   padding: 10px;
   margin: 0;
   position: absolute;

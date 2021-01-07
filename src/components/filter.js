@@ -16,34 +16,53 @@ const style = `
        width:100vw;
       
       }
+      #showHide{
+        padding:0 !important;
+        margin:0 !important;
+        display:block;
+      }
     }
-
+    
     #filter-card{
      margin:2vw;
      height:750px;
      padding:3vw;
+     padding-top:0 !important;
      background-color:#f5f5f5;
     }
 
     .hidden {
       display: none;
     }
-
+    #showHide{
+      display:none;
+      text-align:center;
+      padding-top:2vh;
+      background-color:#f5f5f5;
+      width:30vw;;
+      margin:5px auto;
+      
+    }
+    #showHide:hover{
+     
+    }
     .container{
       display:grid;
       margin-left:15vw;
       margin-right:15vw;
       grid-template-columns: 2fr 3fr;
-     padding-top:2vh;
+     
       color:black;
       background-color:white;
     }
-
+    h2{
+      line-height:60%
+    }
     
-    h3,h2{
+    h3{
       text-transform:uppercase;
       line-height:60%;
-      padding-top:20px;
+      padding-top:15px;
       
     }
     input,label{
@@ -65,12 +84,13 @@ class Filter extends HTMLElement {
   connectedCallback() {
     this._shadowDom.innerHTML = `
         ${style}
-        
+        <div id='showHide'>HIỂN THỊ BỘ LỌC</div>
         <div class="container">
         
         <form id="filter-card">
+          
             <h3>Tên</h3>
-            <search-hint id="search-bar"></search-hint>
+            <search-hint id="search-bar" ></search-hint>
             <div>
               <i class="fa fa-user-o" aria-hidden="true"></i>
                 <h3>Địa điểm</h3>

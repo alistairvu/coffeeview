@@ -4,7 +4,12 @@ const styles = `
   padding: 2px;
   
 }
-
+@media (max-width: 729px) {
+        
+  .container{
+    margin:0 auto
+  }
+}
 </style>`
 
 import { getResultListFromArr } from "../utils.js"

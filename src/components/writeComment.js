@@ -105,7 +105,7 @@ class WriteComment extends HTMLElement {
         <div class="rating">
          
         </div>
-        <button type="submit">Đăng</button>
+        <button type="submit"><h3>Đăng</h3></button>
       </form>
     </div>`
 
