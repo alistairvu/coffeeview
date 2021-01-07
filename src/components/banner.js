@@ -21,10 +21,10 @@ const styles = `
 }
 
 .content {
- 
-  border-radius: 20px;
+  height:100%;
+  width:100%;
   background: rgba(255, 255, 255, 0.5); 
-  padding: 10px;
+
   margin: 0;
   position: absolute;
   top: 50%;
@@ -33,6 +33,7 @@ const styles = `
 }
 
 h1 {
+ padding-top:10%;
   text-transform: uppercase;
   color: black;
   font-size:500%;
