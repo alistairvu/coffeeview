@@ -1,4 +1,4 @@
-import { getDataFromDocs, getDataFromDoc } from "../utils.js";
+import { getDataFromDocs } from "../utils.js"
 const style = `
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
 
@@ -42,11 +42,11 @@ const style = `
   width: 100%;
   
 }
-`;
+`
 class SearchHint extends HTMLElement {
   constructor() {
-    super();
-    this._shadowDom = this.attachShadow({ mode: "open" });
+    super()
+    this._shadowDom = this.attachShadow({ mode: "open" })
   }
   async connectedCallback() {
     this._shadowDom.innerHTML = `
@@ -62,7 +62,7 @@ class SearchHint extends HTMLElement {
                   </datalist>
                 </div>
                 </div>
-            `;
+            `
     let html2 = `<div class="wrap">
     <div class="search">
        <input type="text" class="searchTerm" placeholder="What are you looking for?">
@@ -71,50 +71,50 @@ class SearchHint extends HTMLElement {
       </button>
     </div>
  </div>`
-    const res = await firebase.firestore().collection("cafes").get();
-    const data = getDataFromDocs(res);
-    const listArr = [];
+    const res = await firebase.firestore().collection("cafes").get()
+    const data = getDataFromDocs(res)
+    const listArr = []
 
     for (const iterator of data) {
-      listArr.push(iterator.name);
+      listArr.push(iterator.name)
     }
-    let html = "";
-    let ProductsList = this._shadowDom.querySelector("#ProductsList");
+    let html = ""
+    let ProductsList = this._shadowDom.querySelector("#ProductsList")
 
     listArr.forEach((element) => {
       html += `
               <option value="${element}" />
-            `;
-    });
+            `
+    })
     ProductsList.innerHTML = `
             ${html}
-          `;
+          `
     //   check and give result
-    let textSearch = this._shadowDom.querySelector("#myInput");
+    let textSearch = this._shadowDom.querySelector("#myInput")
 
     textSearch.addEventListener("keyup", async () => {
-    try {
-      const nameSearch = textSearch.value;
-      console.log(nameSearch);
-      // let firstRun = ''
-      const result = await firebase
-        .firestore()
-        .collection("cafes")
-        .where("name", "==", nameSearch)
-        .get();
+      try {
+        const nameSearch = textSearch.value
+        console.log(nameSearch)
+        // let firstRun = ''
+        const result = await firebase
+          .firestore()
+          .collection("cafes")
+          .where("name", "==", nameSearch)
+          .get()
 
-      const id = result.docs[0].id
+        const id = result.docs[0].id
 
-      const searchBtn = this._shadowDom.getElementById("submit-btn")
-      searchBtn.addEventListener("click", (e) => {
-        e.preventDefault()
-        router.navigate(`/cafe/${id}`)
-      })
-    } catch (e) {
-      console.error(e)
-    }
-    });
+        const searchBtn = this._shadowDom.getElementById("submit-btn")
+        searchBtn.addEventListener("click", (e) => {
+          e.preventDefault()
+          router.navigate(`/cafe/${id}`)
+        })
+      } catch (e) {
+        console.error(e)
+      }
+    })
     //   const result = await firebase.firestore().collection('cafes').where('name', '==' ,  textSearch).get()
   }
 }
-window.customElements.define("search-hint", SearchHint);
+window.customElements.define("search-hint", SearchHint)
