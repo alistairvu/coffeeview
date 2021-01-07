@@ -4,6 +4,15 @@ const styles = `
     margin: 0;
     padding: 0;
   }
+
+  .container {
+    width: 60vw;
+    margin: 0 auto;
+  }
+
+  h1 {
+    text-align: center;
+  }
 </style>`
 
 class CreateStore extends HTMLElement {
@@ -14,9 +23,10 @@ class CreateStore extends HTMLElement {
 
   connectedCallback() {
     this._shadowRoot.innerHTML = `
+    ${styles}
+    <header-cafe></header-cafe>
     <div class="container">
-      <header-cafe></header-cafe>
-      <h1>ADD STORE</h1>
+      <h1 style="text-align: center;">ADD STORE</h1>
       <form-cafe></form-cafe>
     </div>`
   }
