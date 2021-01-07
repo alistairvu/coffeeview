@@ -65,15 +65,9 @@ a:hover {
     width:100%;
     grid-template-areas:
     'nav'
-    'nav'
+    'nav';
+   
 
-  }
-  img {
-    grid-row: 1 / span 2;
-    display:block
-  }
-  .info {
-    grid-row: 3 / span 2;
   }
   
   

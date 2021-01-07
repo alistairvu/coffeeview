@@ -4,7 +4,11 @@ const styles = `
   margin: 0;
   padding: 0;
 }
-
+@media (max-width: 729px) {
+  h1 {
+    font-size:200%;
+  }
+}
 .container {
   width: 100%;
   height: calc(100vh - 64px);
@@ -17,10 +21,9 @@ const styles = `
 }
 
 .content {
-  border: 1px black solid;
+ 
   border-radius: 20px;
-  background: white;
-  opacity: 0.7;
+  background: rgba(255, 255, 255, 0.5); 
   padding: 10px;
   margin: 0;
   position: absolute;
@@ -43,13 +46,13 @@ h1 {
   font-family: "Oswald";
   padding: 5px;
   font-size: 100%;
-  background-color: #f5f5f5;
+  background-color:#ebebeb; 
   border: none;
 
 }
 
 .explore-btn:hover {
-  background-color: #ebebeb;
+  background-color: #f5f5f5;
 }
 
 .explore-btn:focus, .explore-btn:active {
@@ -69,7 +72,7 @@ class Banner extends HTMLElement {
     <div class="container">
       <div class="content">
         <h1>Tìm quán cafe <br /> trong mơ của bạn</h1>
-        <button class="explore-btn"><b>KHÁM PHÁ</b></button> 
+        <button class="explore-btn"><b><h2>KHÁM PHÁ</h2></b></button> 
     </div>
     </div>`
 

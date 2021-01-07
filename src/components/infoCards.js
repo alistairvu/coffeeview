@@ -8,8 +8,7 @@ const styles = `
       .container {
         width: 60vw;
         margin: 0 auto;
-        margin-top: 5vh;
-      
+       
         
 
       }
@@ -49,7 +48,7 @@ const styles = `
       }
 
       .cards {
-        margin-top: 5vh;
+        
         display: flex;
         justify-content: space-between;
         
@@ -82,7 +81,7 @@ const styles = `
       }
 
       .card-section {
-        margin-top: 5px;
+       
         margin-bottom: 5px;
       }
     </style>

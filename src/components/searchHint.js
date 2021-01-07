@@ -55,7 +55,7 @@ class SearchHint extends HTMLElement {
             </style>
             <div class="wrap">
                 <div class='searchBar'>
-                  <input type="text" class="searchTerm" id="myInput" list="ProductsList" title="Type in a name" placeholder="What are you looking for?">
+                  <input type="text" class="searchTerm" id="myInput" list="ProductsList" title="Type in a name" placeholder="Nhập tên quán">
                   <button type="submit" class="searchButton" id= "submit-btn"><img src="https://www.flaticon.com/svg/static/icons/svg/751/751463.svg" alt="icon search"></button>
                   <datalist id="ProductsList" id-list="">
     

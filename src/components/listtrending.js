@@ -43,7 +43,7 @@ const style = `
     padding-left:20px;
   
   }
-  .wrapper:hover{
+  .column:hover{
     background-color:#ebebeb;
   }
 
