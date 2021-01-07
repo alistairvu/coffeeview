@@ -46,13 +46,13 @@ h1 {
   font-family: "Oswald";
   padding: 5px;
   font-size: 100%;
-  background-color: #f5f5f5;
+  background-color:#ebebeb; 
   border: none;
 
 }
 
 .explore-btn:hover {
-  background-color: #ebebeb;
+  background-color: #f5f5f5;
 }
 
 .explore-btn:focus, .explore-btn:active {
@@ -72,7 +72,7 @@ class Banner extends HTMLElement {
     <div class="container">
       <div class="content">
         <h1>Tìm quán cafe <br /> trong mơ của bạn</h1>
-        <button class="explore-btn"><b>KHÁM PHÁ</b></button> 
+        <button class="explore-btn"><b><h2>KHÁM PHÁ</h2></b></button> 
     </div>
     </div>`
 
