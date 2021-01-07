@@ -108,11 +108,7 @@ class Filter extends HTMLElement {
         
         </div>
         `
-<<<<<<< HEAD
-    const allCheckboxes = this._shadowDom.querySelectorAll( 
-=======
     const showHide = this._shadowDom.getElementById("showHide")
-    const container = this._shadowDom.querySelector(".container")
     const filterCard = this._shadowDom.getElementById("filter-card")
 
     showHide.addEventListener("click", () => {
@@ -122,7 +118,6 @@ class Filter extends HTMLElement {
     })
 
     const allCheckboxes = this._shadowDom.querySelectorAll(
->>>>>>> 9207786e25dd3dabf9bcde4915200203fca17b46
       "input[type=checkbox]"
     )
     allCheckboxes.forEach((box) => {
