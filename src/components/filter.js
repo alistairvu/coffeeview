@@ -108,7 +108,6 @@ class Filter extends HTMLElement {
         </div>
         `
     const showHide = this._shadowDom.getElementById("showHide")
-    const container = this._shadowDom.querySelector(".container")
     const filterCard = this._shadowDom.getElementById("filter-card")
 
     // showHide.addEventListener("click", () => {
