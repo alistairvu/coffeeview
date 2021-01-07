@@ -15,6 +15,7 @@ ul {
      ul {
          grid-auto-flow: column;
      }
+     
  }
 
  a {
@@ -41,7 +42,7 @@ ul {
 
  div {
      display: flex;
-     height: 15vh;
+     height: 35vh;
      width: 100%;
      background-color: #000000;
      line-height: 1.3;
