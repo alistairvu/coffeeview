@@ -20,6 +20,8 @@ import "./components/banner.js"
 import "./components/footer.js"
 import "./components/aboutus.js"
 
+
+
 import "./screens/aboutUsScreen.js"
 import "./screens/resultScreen.js"
 import "./screens/cafeScreen.js"

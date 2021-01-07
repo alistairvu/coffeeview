@@ -17,7 +17,6 @@ class CreateStore extends HTMLElement {
     <div class="container">
       <header-cafe></header-cafe>
       <h1>ADD STORE</h1>
-      <form-cafe></form-cafe>
     </div>`
   }
 }
