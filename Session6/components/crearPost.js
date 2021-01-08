@@ -33,6 +33,8 @@ class CreatePot extends HTMLElement {
             <form action="" id="create-post">
             <textarea name="content" id="content" cols="30" rows="6" placeholder="Say something"></textarea> <br>
             <input type="file" name="file" id="file">
+            <input type="file" name="file" id="file">
+            <input type="file" name="file" id="file">
            <button class="post-btn">Post</button>
            </form>
         `
